@@ -16,6 +16,12 @@
                                 <dd class="text-base leading-6 font-medium text-gray-500">
                                     <time datetime="2020-09-23T18:30:00.000Z">September 24, 2020</time>
                                 </dd>
+                                <div class="py-4">
+                                    <span class="inline-block bg-indigo-500 rounded-full px-3 py-2 text-sm font-semibold text-white mt-2">#travel</span>
+                                    <span class="inline-block bg-indigo-500 rounded-full px-3 py-2 text-sm font-semibold text-white mt-2">#winter</span>
+                                    <span class="inline-block bg-indigo-500 rounded-full px-3 py-2 text-sm font-semibold text-white mt-2">#travel</span>
+                                    <span class="inline-block bg-indigo-500 rounded-full px-3 py-2 text-sm font-semibold text-white mt-2">#winter</span>
+                                </div>
                             </dl>
 
                             <div class="space-y-5 xl:col-span-3">
@@ -347,6 +353,15 @@
                                 <dd class="text-base leading-6 font-medium text-gray-500">
                                     <time datetime="2020-06-23T18:52:03Z">June 24, 2020</time>
                                 </dd>
+                                <div class="py-4">
+                                    <span class="inline-block bg-indigo-500 rounded-full px-3 py-2 text-sm font-semibold text-white mt-2">#travel</span>
+                                    <span class="inline-block bg-indigo-500 rounded-full px-3 py-2 text-sm font-semibold text-white mt-2">#winter</span>
+                                    <span class="inline-block bg-indigo-500 rounded-full px-3 py-2 text-sm font-semibold text-white mt-2">#travel</span>
+                                    <span class="inline-block bg-indigo-500 rounded-full px-3 py-2 text-sm font-semibold text-white mt-2">#winter</span>
+                                    <span class="inline-block bg-indigo-500 rounded-full px-3 py-2 text-sm font-semibold text-white mt-2">#winter</span>
+                                    <span class="inline-block bg-indigo-500 rounded-full px-3 py-2 text-sm font-semibold text-white mt-2">#winter</span>
+                                    <span class="inline-block bg-indigo-500 rounded-full px-3 py-2 text-sm font-semibold text-white mt-2">#winter</span>
+                                </div>
                             </dl>
                             <div class="space-y-5 xl:col-span-3">
                                 <div class="space-y-6"><h2 class="text-2xl leading-8 font-bold tracking-tight"><a
