@@ -13,5 +13,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
-
+    $router->resource('posts','PostController');
+    $router->resource('tags','TagController');
+    $router->resource('categorys','CategoryController');
 });

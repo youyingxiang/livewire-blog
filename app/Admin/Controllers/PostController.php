@@ -3,10 +3,12 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Repositories\Post;
+use App\Models\CategoryModel;
+use App\Models\PostModel;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
-use Dcat\Admin\Show;
 use Dcat\Admin\Controllers\AdminController;
+use Dcat\Admin\Widgets\Markdown;
 
 class PostController extends AdminController
 {
@@ -20,39 +22,19 @@ class PostController extends AdminController
         return Grid::make(new Post(), function (Grid $grid) {
             $grid->column('id')->sortable();
             $grid->column('title');
-            $grid->column('content');
+//            $grid->column('content')->display(function ($val){
+//                return $val;
+//            });
             $grid->column('category_id');
             $grid->column('is_hot');
             $grid->column('hot_image');
             $grid->column('created_at');
-            $grid->column('updated_at')->sortable();
-        
-            $grid->filter(function (Grid\Filter $filter) {
-                $filter->equal('id');
-        
+            $grid->createMode(Grid::CREATE_MODE_DEFAULT);
+            $grid->showQuickEditButton(false);
+            $grid->actions(function (\Dcat\Admin\Grid\Displayers\Actions $actions) {
+                $actions->disableEdit(false);
             });
-        });
-    }
 
-    /**
-     * Make a show builder.
-     *
-     * @param mixed $id
-     *
-     * @return Show
-     */
-    protected function detail($id)
-    {
-        return Show::make($id, new Post(), function (Show $show) {
-            $show->field('id');
-            $show->field('id');
-            $show->field('title');
-            $show->field('content');
-            $show->field('category_id');
-            $show->field('is_hot');
-            $show->field('hot_image');
-            $show->field('created_at');
-            $show->field('updated_at');
         });
     }
 
@@ -64,15 +46,14 @@ class PostController extends AdminController
     protected function form()
     {
         return Form::make(new Post(), function (Form $form) {
-            $form->display('id');
-            $form->text('title');
-            $form->text('content');
-            $form->text('category_id');
-            $form->text('is_hot');
-            $form->text('hot_image');
-        
-            $form->display('created_at');
-            $form->display('updated_at');
+            $form->text('title')->required();
+            $form->markdown('content')->languageUrl(admin_asset('@admin/dcat/plugins/editor-md/languages/zh-tw.js'))->required();;
+            $form->select('category_id')->options(CategoryModel::orderBy('id', 'desc')->pluck('name', 'id'))->required();
+            $form->select('is_hot')->options(PostModel::HOT)->when(PostModel::HOT_YES, function (Form $form) {
+                $form->image('hot_image')->autoUpload()->saveAsString();
+            })->default(0);
+
+
         });
     }
 }

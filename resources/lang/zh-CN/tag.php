@@ -1,7 +1,7 @@
 <?php 
 return [
     'labels' => [
-        'Tag' => 'Tag',
+        'Tag' => '标签',
     ],
     'fields' => [
         'name' => '名称',

@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
-use Dcat\Admin\Traits\HasDateTimeFormatter;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Model;
+use Dcat\Admin\Traits\ModelTree;
 
-class CategoryModel extends Model
+class CategoryModel extends BaseModel
 {
-	use HasDateTimeFormatter;
-    use SoftDeletes;
+    use ModelTree;
 
     protected $table = 'category';
-    
+
+    public function getTitleColumn(): string
+    {
+        return 'name';
+    }
+
 }

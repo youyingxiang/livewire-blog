@@ -1,7 +1,7 @@
 <?php 
 return [
     'labels' => [
-        'Post' => 'Post',
+        'Post' => '文章',
     ],
     'fields' => [
         'id' => 'Id',
