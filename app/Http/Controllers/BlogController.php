@@ -13,4 +13,17 @@ class BlogController extends Controller
     {
         return view('blog.index');
     }
+
+    /**
+     * @return View
+     */
+    public function detail(): View
+    {
+        return view('blog.detail');
+    }
+
+    public function list(): View
+    {
+        return view('blog.list');
+    }
 }
