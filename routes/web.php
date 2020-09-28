@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 //    return view('dashboard');
 //})->name('dashboard');
 Route::group([], function (Router $router) {
-   $router->get('/', [\App\Http\Controllers\BlogController::class, 'index']);
-   $router->get('/detail',[\App\Http\Controllers\BlogController::class, 'detail']);
-   $router->get('/list',[\App\Http\Controllers\BlogController::class, 'list']);
+    $router->get('/', [\App\Http\Controllers\BlogController::class, 'index']);
+    $router->get('/detail', [\App\Http\Controllers\BlogController::class, 'detail']);
+    $router->get('/list', [\App\Http\Controllers\BlogController::class, 'list']);
 });
