@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Dcat\Admin\Widgets\Markdown;
 
-
 class PostModel extends BaseModel
 {
     protected $table = 'post';
@@ -20,7 +19,7 @@ class PostModel extends BaseModel
      * @param string $value
      * @return string
      */
-    public function getContentStrAttribute():string
+    public function getContentStrAttribute(): string
     {
         return Markdown::make($this->content) ?? '';
     }

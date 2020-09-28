@@ -4,9 +4,9 @@ namespace App\Admin\Controllers;
 
 use App\Admin\Repositories\Category;
 use App\Models\CategoryModel;
+use Dcat\Admin\Controllers\AdminController;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
-use Dcat\Admin\Controllers\AdminController;
 
 class CategoryController extends AdminController
 {
@@ -26,8 +26,6 @@ class CategoryController extends AdminController
             $grid->column('created_at');
         });
     }
-
-
 
     /**
      * Make a form builder.

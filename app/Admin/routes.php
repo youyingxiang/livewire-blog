@@ -12,7 +12,7 @@ Route::group([
     'middleware'    => config('admin.route.middleware'),
 ], function (Router $router) {
     $router->get('/', 'HomeController@index');
-    $router->resource('posts','PostController');
-    $router->resource('tags','TagController');
-    $router->resource('categorys','CategoryController');
+    $router->resource('posts', 'PostController');
+    $router->resource('tags', 'TagController');
+    $router->resource('categorys', 'CategoryController');
 });

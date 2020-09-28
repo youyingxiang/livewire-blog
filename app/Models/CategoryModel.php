@@ -14,5 +14,4 @@ class CategoryModel extends BaseModel
     {
         return 'name';
     }
-
 }
