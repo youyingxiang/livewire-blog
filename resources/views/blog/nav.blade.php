@@ -21,20 +21,20 @@
             <nav class="hidden md:flex space-x-10">
 
                 <a href="#"
-                   class="text-lg leading-6 font-medium text-gray-500 hover:text-indigo-600 focus:outline-none focus:text-indigo-600 transition ease-in-out duration-150">
+                   class="text-lg leading-6 font-medium text-gray-500 hover:text-indigo-600 hover:font-bold hover:underline focus:outline-none focus:text-indigo-600 transition ease-in-out duration-150">
                     Laravel
                 </a>
 
                 <a href="#"
-                   class="text-lg  leading-6 font-medium text-gray-500 hover:text-indigo-600 focus:outline-none focus:text-indigo-600 transition ease-in-out duration-150">
+                   class="text-lg  leading-6 font-medium text-gray-500 hover:text-indigo-600 hover:font-bold hover:underline focus:outline-none focus:text-indigo-600 transition ease-in-out duration-150">
                     Golang
                 </a>
                 <a href="#"
-                   class="text-lg leading-6 font-medium text-gray-500 hover:text-indigo-600 focus:outline-none focus:text-indigo-600 transition ease-in-out duration-150">
+                   class="text-lg leading-6 font-medium text-gray-500 hover:text-indigo-600 hover:font-bold hover:underline focus:outline-none focus:text-indigo-600 transition ease-in-out duration-150">
                     开源
                 </a>
                 <a href="#"
-                   class="text-lg  leading-6 font-medium text-gray-500 hover:text-indigo-600 focus:outline-none focus:text-indigo-600 transition ease-in-out duration-150">
+                   class="text-lg  leading-6 font-medium text-gray-500 hover:text-indigo-600 hover:font-bold hover:underline focus:outline-none focus:text-indigo-600 transition ease-in-out duration-150">
                     关于我
                 </a>
 

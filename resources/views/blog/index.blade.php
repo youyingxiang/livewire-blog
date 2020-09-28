@@ -7,7 +7,7 @@
         <div class="bg-white">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
             <div class="lg:text-center">
-                <span class="text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase">技术博文</span>
+                <span class="text-base leading-6 text-gray-600 font-semibold tracking-wide uppercase">技术博文</span>
             </div>
 
             <div class="mt-5">
@@ -17,7 +17,7 @@
                             <img class="w-full" src="https://www.tailwindcss.cn/img/card-top.jpg"
                                  alt="Sunset in the mountains">
                             <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 hover:underline">The Coldest Sunset</div>
+                                <div class="font-bold text-xl mb-2 hover:underline hover:text-indigo-600 ">The Coldest Sunset</div>
                                 <p class="text-gray-700 text-base hover:underline">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla!
                                     Maiores et perferendis eaque, exercitationem praesentium nihil.
@@ -35,7 +35,7 @@
                             <img class="w-full" src="https://www.tailwindcss.cn//img/card-top.jpg"
                                  alt="Sunset in the mountains">
                             <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 hover:underline">The Coldest Sunset</div>
+                                <div class="font-bold text-xl mb-2 hover:underline hover:text-indigo-600 ">The Coldest Sunset</div>
                                 <p class="text-gray-700 text-base hover:underline">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla!
                                     Maiores et perferendis eaque, exercitationem praesentium nihil.
@@ -53,7 +53,7 @@
                             <img class="w-full" src="https://www.tailwindcss.cn//img/card-top.jpg"
                                  alt="Sunset in the mountains">
                             <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 hover:underline">The Coldest Sunset</div>
+                                <div class="font-bold text-xl mb-2 hover:underline hover:text-indigo-600 ">The Coldest Sunset</div>
                                 <p class="text-gray-700 text-base hover:underline">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla!
                                     Maiores et perferendis eaque, exercitationem praesentium nihil.
@@ -68,7 +68,7 @@
                     </li>
                 </ul>
                 <div class="lg:text-center pt-5">
-                    <a class="mr-5 float-right text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase hover:underline">查看更多</a>
+                    <a class="mr-5 float-right text-base leading-6 text-gray-500 font-semibold tracking-wide uppercase hover:underline hover:text-indigo-600">查看更多</a>
                 </div>
             </div>
 
@@ -99,7 +99,7 @@
 
             <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <div class="lg:text-center ">
-                    <p class="text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase">合作案列</p>
+                    <p class="text-base leading-6 text-gray-600 font-semibold tracking-wide uppercase">合作案列</p>
                 </div>
 
                 <div class="py-1 mt-10">
