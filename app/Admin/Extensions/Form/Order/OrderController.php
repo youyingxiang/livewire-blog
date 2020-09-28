@@ -19,12 +19,12 @@ use App\Admin\Actions\Grid\OrderDelete;
 use App\Admin\Actions\Grid\OrderReview;
 use App\Models\PurchaseBaseModel;
 use Dcat\Admin\Admin;
+use Dcat\Admin\Controllers\AdminController;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
-use Exception;
-use Dcat\Admin\Controllers\AdminController;
 use Dcat\Admin\Layout\Content;
 use Dcat\Admin\Repositories\Repository;
+use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -73,11 +73,11 @@ abstract class OrderController extends AdminController
     {
         if (\PHP_SAPI !== 'cli') {
             $this->style();
-            $this->item_name        = $this->getItemName();
-            $this->oredr_model      = $this->getOrderModel();
+            $this->item_name = $this->getItemName();
+            $this->oredr_model = $this->getOrderModel();
             $this->order_repository = $this->getOrderRepository();
-            $this->item_model       = $this->getItemModel();
-            $this->item_repository  = $this->getItemRepository();
+            $this->item_model = $this->getItemModel();
+            $this->item_repository = $this->getItemRepository();
         }
     }
 
@@ -112,7 +112,8 @@ CSS
     public function getOrderRepository(): Repository
     {
         $className = $this->getClassNameByType('repository');
-        return (new $className($this->order_relations));
+
+        return new $className($this->order_relations);
     }
 
     /**
@@ -131,7 +132,8 @@ CSS
     public function getItemRepository(): Repository
     {
         $className = $this->getClassNameByType('repository', false);
-        return (new $className($this->item_relations));
+
+        return new $className($this->item_relations);
     }
 
     /**
@@ -144,10 +146,10 @@ CSS
     {
         switch ($type) {
             case 'model':
-                $subject = "\\App\\Models\\?Model";
+                $subject = '\\App\\Models\\?Model';
                 break;
             case 'repository':
-                $subject = "\\App\\Admin\\Repositories\\?";
+                $subject = '\\App\\Admin\\Repositories\\?';
                 break;
             default:
                 throw new Exception('参数错误');
@@ -157,14 +159,15 @@ CSS
 
         $className = Str::replaceFirst('?', $controller, $subject);
         if (! class_exists($className)) {
-            throw new Exception(Str::replaceFirst('?', $className, "? 不存在！"));
+            throw new Exception(Str::replaceFirst('?', $className, '? 不存在！'));
         }
+
         return $className;
     }
 
     protected function getItemName(): string
     {
-        return Str::replaceFirst("Order", "Item", admin_controller_name());
+        return Str::replaceFirst('Order', 'Item', admin_controller_name());
     }
 
     /**
@@ -175,6 +178,7 @@ CSS
     public function edit($id, Content $content)
     {
         $this->order = $this->oredr_model::findOrFail($id);
+
         return $content
             ->title($this->title())
             ->description($this->description()['edit'] ?? trans('admin.edit'))

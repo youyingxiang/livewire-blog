@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class Sessions extends Bar
 {
     /**
-     * 初始化卡片内容
+     * 初始化卡片内容.
      */
     protected function init()
     {
@@ -37,7 +37,7 @@ class Sessions extends Bar
             $color->primary(),
             $dark35,
             $dark35,
-            $dark35
+            $dark35,
         ]);
     }
 

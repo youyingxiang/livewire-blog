@@ -20,6 +20,6 @@ class Fee extends AbstractDisplayer
 {
     public function display()
     {
-        return '￥' . money_formatter($this->value);
+        return '￥'.money_formatter($this->value);
     }
 }

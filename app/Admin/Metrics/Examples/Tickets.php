@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class Tickets extends RadialBar
 {
     /**
-     * 初始化卡片内容
+     * 初始化卡片内容.
      */
     protected function init()
     {
@@ -65,7 +65,7 @@ class Tickets extends RadialBar
     }
 
     /**
-     * 卡片内容
+     * 卡片内容.
      *
      * @param string $content
      *

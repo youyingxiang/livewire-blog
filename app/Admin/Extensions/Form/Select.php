@@ -14,8 +14,8 @@
 
 namespace App\Admin\Extensions\Form;
 
-use Dcat\Admin\Form;
 use Dcat\Admin\Admin;
+use Dcat\Admin\Form;
 
 class Select
 {
@@ -85,10 +85,10 @@ JS;
     {
         // 加载pku动态选择
         Form\Field\Select::macro('loadpku', function ($sourceUrl) {
-            $sourceUrl  = admin_url($sourceUrl);
-            $unitClass  = static::FIELD_CLASS_PREFIX . 'unit';
-            $skuIdClass = static::FIELD_CLASS_PREFIX . 'sku_id';
-            $typeClass  = static::FIELD_CLASS_PREFIX . 'type';
+            $sourceUrl = admin_url($sourceUrl);
+            $unitClass = static::FIELD_CLASS_PREFIX.'unit';
+            $skuIdClass = static::FIELD_CLASS_PREFIX.'sku_id';
+            $typeClass = static::FIELD_CLASS_PREFIX.'type';
 
             $script = <<<JS
 $(document).off('change', "{$this->getElementClassSelector()}");

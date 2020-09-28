@@ -3,10 +3,10 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Repositories\Tag;
+use Dcat\Admin\Controllers\AdminController;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
-use Dcat\Admin\Controllers\AdminController;
 
 class TagController extends AdminController
 {
@@ -22,10 +22,9 @@ class TagController extends AdminController
             $grid->column('name');
             $grid->column('created_at');
             $grid->column('updated_at')->sortable();
-        
+
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('id');
-        
             });
         });
     }
@@ -57,7 +56,7 @@ class TagController extends AdminController
         return Form::make(new Tag(), function (Form $form) {
             $form->display('id');
             $form->text('name');
-        
+
             $form->display('created_at');
             $form->display('updated_at');
         });

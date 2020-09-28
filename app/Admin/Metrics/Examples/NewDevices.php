@@ -10,7 +10,7 @@ class NewDevices extends Donut
     protected $labels = ['Desktop', 'Mobile'];
 
     /**
-     * 初始化卡片内容
+     * 初始化卡片内容.
      */
     protected function init()
     {
@@ -61,7 +61,7 @@ class NewDevices extends Donut
     public function withChart(array $data)
     {
         return $this->chart([
-            'series' => $data
+            'series' => $data,
         ]);
     }
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Dcat\Admin\Widgets\Markdown;
 
+
 class PostModel extends BaseModel
 {
     protected $table = 'post';
