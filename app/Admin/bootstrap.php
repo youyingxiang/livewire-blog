@@ -1,10 +1,9 @@
 <?php
 
 use Dcat\Admin\Admin;
-use Dcat\Admin\Grid;
 use Dcat\Admin\Form;
+use Dcat\Admin\Grid;
 use Dcat\Admin\Grid\Filter;
-use Dcat\Admin\Show;
 
 /**
  * Dcat-admin - admin builder based on Laravel.
@@ -22,9 +21,7 @@ use Dcat\Admin\Show;
  * Or require js and css assets:
  * Admin::css('/packages/prettydocs/css/styles.css');
  * Admin::js('/packages/prettydocs/js/main.js');
- *
  */
-
 Filter::resolving(function (Filter $filter) {
     $filter->panel();
     $filter->expand();
@@ -32,7 +29,7 @@ Filter::resolving(function (Filter $filter) {
 
 Grid::resolving(function (Grid $grid) {
     $grid->setActionClass(\Dcat\Admin\Grid\Displayers\Actions::class);
-    $grid->model()->orderBy("id", "desc");
+    $grid->model()->orderBy('id', 'desc');
     $grid->disableViewButton();
     $grid->showQuickEditButton();
     $grid->enableDialogCreate();
@@ -42,7 +39,7 @@ Grid::resolving(function (Grid $grid) {
         $actions->disableDelete();
         $actions->disableEdit();
     });
-    $grid->option("dialog_form_area", ["70%", "80%"]);
+    $grid->option('dialog_form_area', ['70%', '80%']);
 });
 Dcat\Admin\Grid\Column::extend('emp', \App\Admin\Extensions\Grid\EmptyData::class);
 Dcat\Admin\Grid\Column::extend('fee', \App\Admin\Extensions\Grid\Fee::class);

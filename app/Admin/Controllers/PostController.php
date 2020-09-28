@@ -3,10 +3,10 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Repositories\Post;
+use Dcat\Admin\Controllers\AdminController;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
-use Dcat\Admin\Controllers\AdminController;
 
 class PostController extends AdminController
 {
@@ -26,10 +26,9 @@ class PostController extends AdminController
             $grid->column('hot_image');
             $grid->column('created_at');
             $grid->column('updated_at')->sortable();
-        
+
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('id');
-        
             });
         });
     }
@@ -70,7 +69,7 @@ class PostController extends AdminController
             $form->text('category_id');
             $form->text('is_hot');
             $form->text('hot_image');
-        
+
             $form->display('created_at');
             $form->display('updated_at');
         });

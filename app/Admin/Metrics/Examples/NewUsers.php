@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class NewUsers extends Line
 {
     /**
-     * 初始化卡片内容
+     * 初始化卡片内容.
      *
      * @return void
      */
@@ -64,7 +64,7 @@ class NewUsers extends Line
                 // 卡片内容
                 $this->withContent('89.2k');
                 // 图表数据
-                $this->withChart([28, 40, 36, 52, 38, 60, 55,]);
+                $this->withChart([28, 40, 36, 52, 38, 60, 55]);
         }
     }
 

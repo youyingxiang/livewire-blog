@@ -29,6 +29,7 @@ class BatchDeail extends AbstractDisplayer
             $url = $params;
         }
         $this->addScript();
+
         return "<a class='{$this->selector}' data-url='{$url}' href='javascript:void(0)' >详情</a>";
     }
 

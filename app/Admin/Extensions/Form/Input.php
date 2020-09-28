@@ -38,9 +38,10 @@ class Input extends Text
         return parent::render();
     }
 
-    public function rem(int $rem):self
+    public function rem(int $rem): self
     {
         $this->rem = $rem;
+
         return $this;
     }
 }

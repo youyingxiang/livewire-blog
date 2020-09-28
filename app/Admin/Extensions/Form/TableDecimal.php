@@ -35,6 +35,7 @@ class TableDecimal extends Text
     {
         $this->inputmask($this->options);
         $this->defaultAttribute('style', 'width: 7rem;flex:none');
+
         return parent::render();
     }
 }

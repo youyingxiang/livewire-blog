@@ -25,6 +25,7 @@ class ReviewIcon extends Field
 
         if ($show_status_img) {
             Admin::style($this->style());
+
             return "<i data-column='{$this->column}' data-value='{$this->value}' class=\"postImg\"><img src=\"{$show_status_img}\"></i>";
         }
     }
