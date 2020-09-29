@@ -23,6 +23,6 @@ use Illuminate\Support\Facades\Route;
 //})->name('dashboard');
 Route::group([], function (Router $router) {
     $router->get('/', [\App\Http\Controllers\BlogController::class, 'index']);
-    $router->get('/detail', [\App\Http\Controllers\BlogController::class, 'detail']);
-    $router->get('/{category}', [\App\Http\Controllers\BlogController::class, 'category'])->name('home.category');
+    $router->get('/{category}/{id}', [\App\Http\Controllers\BlogController::class, 'detail'])->name('home.detail');
+    $router->get('/category/{category?}', [\App\Http\Controllers\BlogController::class, 'category'])->name('home.category');
 });

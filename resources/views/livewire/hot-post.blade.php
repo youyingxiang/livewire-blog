@@ -8,6 +8,6 @@
         @endforeach
     </ul>
     <div class="lg:text-center pt-5">
-        <a class="mr-5 float-right text-base leading-6 text-gray-500 font-semibold tracking-wide uppercase hover:underline hover:text-indigo-600">查看更多</a>
+        <a href="{{ route('home.category') }}" class="mr-5 float-right text-base leading-6 text-gray-500 font-semibold tracking-wide uppercase hover:underline hover:text-indigo-600">查看更多</a>
     </div>
 </div>

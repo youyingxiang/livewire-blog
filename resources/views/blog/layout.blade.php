@@ -16,8 +16,10 @@
     <meta name="description" content="" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @yield('css')
     <script src="{{ asset('js/app.js')  }}" defer></script>
     @livewireStyles
+
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
 <livewire:nav/>
@@ -25,5 +27,5 @@
 @include('blog.footer')
 @livewireScripts
 </body>
-<script></script>
+@yield('js')
 </html>

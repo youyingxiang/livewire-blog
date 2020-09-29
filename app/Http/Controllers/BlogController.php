@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\BlogRepository;
 use Illuminate\View\View;
 
 class BlogController extends Controller
@@ -15,15 +16,19 @@ class BlogController extends Controller
     }
 
     /**
+     * @param string $category
+     * @param int $id
+     * @param BlogRepository $repository
      * @return View
      */
-    public function detail(): View
+    public function detail(string $category, int $id, BlogRepository $repository): View
     {
-        return view('blog.detail');
+        $post = $repository->getPostById($id);
+        return view('blog.detail',compact('post'));
     }
 
-    public function category(string $category)
+    public function category(string $category = null)
     {
-//        return view('blog.list');
+
     }
 }
