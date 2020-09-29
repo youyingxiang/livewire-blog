@@ -3,10 +3,9 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Repositories\Partner;
+use Dcat\Admin\Controllers\AdminController;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
-use Dcat\Admin\Show;
-use Dcat\Admin\Controllers\AdminController;
 
 class PartnerController extends AdminController
 {
@@ -22,14 +21,11 @@ class PartnerController extends AdminController
             $grid->model()->orderBy('order', 'desc');
             $grid->column('name');
             $grid->column('introduce');
-            $grid->column('image')->image('', 50, 50)->emp();;
+            $grid->column('image')->image('', 50, 50)->emp();
             $grid->column('order');
             $grid->column('created_at');
-
         });
     }
-
-
 
     /**
      * Make a form builder.

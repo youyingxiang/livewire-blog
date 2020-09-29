@@ -1,12 +1,13 @@
 <?php
 
 /**
- * A helper file for Dcat Admin, to provide autocomplete information to your IDE
+ * A helper file for Dcat Admin, to provide autocomplete information to your IDE.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
  * @author jqh <841324345@qq.com>
  */
+
 namespace Dcat\Admin {
     use Illuminate\Support\Collection;
 
@@ -153,9 +154,13 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection two_factor_recovery_codes(string $label = null)
      * @method Grid\Column|Collection two_factor_secret(string $label = null)
      */
-    class Grid {}
+    class Grid
+    {
+    }
 
-    class MiniGrid extends Grid {}
+    class MiniGrid extends Grid
+    {
+    }
 
     /**
      * @property Show\Field|Collection name
@@ -300,7 +305,9 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection two_factor_recovery_codes(string $label = null)
      * @method Show\Field|Collection two_factor_secret(string $label = null)
      */
-    class Show {}
+    class Show
+    {
+    }
 
     /**
      * @method \App\Admin\Extensions\Form\Fee fee(...$params)
@@ -309,7 +316,9 @@ namespace Dcat\Admin {
      * @method \App\Admin\Extensions\Form\Input ipt(...$params)
      * @method \App\Admin\Extensions\Form\ReviewIcon reviewicon(...$params)
      */
-    class Form {}
+    class Form
+    {
+    }
 
 }
 
@@ -321,17 +330,18 @@ namespace Dcat\Admin\Grid {
      * @method $this selectplus(...$params)
      * @method $this batch_detail(...$params)
      */
-    class Column {}
+    class Column
+    {
+    }
 
-    /**
-     
-     */
-    class Filter {}
+    class Filter
+    {
+    }
 }
 
 namespace Dcat\Admin\Show {
-    /**
-     
-     */
-    class Field {}
+
+    class Field
+    {
+    }
 }

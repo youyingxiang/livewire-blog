@@ -11,6 +11,7 @@ class TagList extends Component
      * @var Collection
      */
     public $tags;
+
     /**
      * 初始化.
      */

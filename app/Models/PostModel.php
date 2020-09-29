@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Support\Str;
 
 class PostModel extends BaseModel
 {
@@ -56,6 +55,4 @@ class PostModel extends BaseModel
     {
         return $this->belongsToMany(TagModel::class, PostTagModel::class, 'post_id', 'tag_id');
     }
-
-
 }

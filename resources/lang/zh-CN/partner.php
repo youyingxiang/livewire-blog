@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 return [
     'labels' => [
         'Partner' => '合作伙伴',

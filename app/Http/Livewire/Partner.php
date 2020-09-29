@@ -9,7 +9,7 @@ use Livewire\Component;
 class Partner extends Component
 {
     /**
-     *  var PartnerModel
+     *  var PartnerModel.
      */
     public $partner;
 
