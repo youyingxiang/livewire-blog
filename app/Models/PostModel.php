@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Extensions\Parsedown;
-use Dcat\Admin\Widgets\Markdown;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Str;
@@ -25,8 +24,7 @@ class PostModel extends BaseModel
 
     protected $with = ['category', 'tag'];
 
-    protected $appends = ['tag_str','describe','content_str'];
-
+    protected $appends = ['tag_str', 'describe', 'content_str'];
 
     /**
      * @return string
@@ -66,8 +64,7 @@ class PostModel extends BaseModel
     public function getDescribeAttribute(): string
     {
         $parsedown = new Parsedown();
-        return $parsedown->line(Str::limit($this->content,300));
+
+        return $parsedown->line(Str::limit($this->content, 300));
     }
-
-
 }

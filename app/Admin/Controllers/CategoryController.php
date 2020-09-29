@@ -19,9 +19,9 @@ class CategoryController extends AdminController
     {
         return Grid::make(new Category(), function (Grid $grid) {
             $grid->model()->resetOrderBy();
-            $grid->model()->orderBy('order','desc');
+            $grid->model()->orderBy('order', 'desc');
             $grid->column('name');
-            $grid->column('parent_name','上级分类');
+            $grid->column('parent_name', '上级分类');
             $grid->column('order');
             $grid->column('slug');
             $grid->column('created_at');
@@ -39,7 +39,7 @@ class CategoryController extends AdminController
             $form->text('name')->required();
             $form->select('parent_id')->options(CategoryModel::selectOptions());
             $form->number('order')->default(0)->required();
-            $form->select('is_link','是否外链')->options(CategoryModel::LINK)->when(CategoryModel::LINK_YES, function (Form $form) {
+            $form->select('is_link', '是否外链')->options(CategoryModel::LINK)->when(CategoryModel::LINK_YES, function (Form $form) {
                 $form->url('link', '外链地址')->saveAsString();
             })->default(0)->required();
 

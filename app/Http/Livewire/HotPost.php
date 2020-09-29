@@ -15,7 +15,7 @@ class HotPost extends Component
     public $hot_posts;
 
     /**
-     * 初始化
+     * 初始化.
      */
     public function mount(): void
     {

@@ -15,7 +15,7 @@ class Nav extends Component
     public $categorys;
 
     /**
-     * 初始化
+     * 初始化.
      */
     public function mount(): void
     {

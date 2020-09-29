@@ -6,7 +6,6 @@ use App\Admin\Repositories\Tag;
 use Dcat\Admin\Controllers\AdminController;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
-use Dcat\Admin\Show;
 
 class TagController extends AdminController
 {
@@ -21,11 +20,8 @@ class TagController extends AdminController
             $grid->column('id')->sortable();
             $grid->column('name');
             $grid->column('created_at');
-
         });
     }
-
-
 
     /**
      * Make a form builder.

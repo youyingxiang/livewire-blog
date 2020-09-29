@@ -10,14 +10,14 @@ class CategoryModel extends BaseModel
 
     protected $table = 'category';
 
-    protected $appends = ['parent_name', 'url','target_blank'];
+    protected $appends = ['parent_name', 'url', 'target_blank'];
 
     const LINK_YES = 1;
     const LINK_NO = 0;
 
     const LINK = [
         self::LINK_YES => '是',
-        self::LINK_NO  => '否'
+        self::LINK_NO  => '否',
     ];
 
     /**
@@ -49,6 +49,6 @@ class CategoryModel extends BaseModel
      */
     public function getTargetBlankAttribute(): string
     {
-        return $this->is_link ? "target=\"_blank\"" : '';
+        return $this->is_link ? 'target="_blank"' : '';
     }
 }
