@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Extensions\Parsedown;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Str;
@@ -24,7 +23,7 @@ class PostModel extends BaseModel
 
     protected $with = ['category', 'tag'];
 
-    protected $appends = ['tag_str', 'describe', 'content_str'];
+    protected $appends = ['tag_str'];
 
     /**
      * @return string
@@ -39,7 +38,7 @@ class PostModel extends BaseModel
      */
     public function getContentStrAttribute(): string
     {
-        return (Parsedown::instance())->parse($this->content);
+        return '';
     }
 
     /**
@@ -58,13 +57,5 @@ class PostModel extends BaseModel
         return $this->belongsToMany(TagModel::class, PostTagModel::class, 'post_id', 'tag_id');
     }
 
-    /**
-     * @return string
-     */
-    public function getDescribeAttribute(): string
-    {
-        $parsedown = new Parsedown();
 
-        return $parsedown->line(Str::limit($this->content, 300));
-    }
 }

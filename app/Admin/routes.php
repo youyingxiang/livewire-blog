@@ -15,4 +15,5 @@ Route::group([
     $router->resource('posts', 'PostController');
     $router->resource('tags', 'TagController');
     $router->resource('categorys', 'CategoryController');
+    $router->resource('partners', 'PartnerController');
 });

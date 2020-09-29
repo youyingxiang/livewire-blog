@@ -53,7 +53,7 @@ class PostController extends AdminController
             });
 
             $form->select('is_hot')->options(PostModel::HOT)->when(PostModel::HOT_YES, function (Form $form) {
-                $form->image('hot_image')->autoUpload()->saveAsString();
+                $form->image('hot_image')->autoUpload()->uniqueName()->saveAsString();
             })->default(0)->required();
             $form->number('view', '浏览数量')->default(0)->required();
         });
