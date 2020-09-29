@@ -2,7 +2,11 @@
 
 namespace App\Models;
 
+use App\Extensions\Parsedown;
 use Dcat\Admin\Widgets\Markdown;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Str;
 
 class PostModel extends BaseModel
 {
@@ -14,13 +18,56 @@ class PostModel extends BaseModel
         self::HOT_YES => '是',
         self::HOT_NO  => '否',
     ];
+    const HOT_COLOR = [
+        self::HOT_YES => 'success',
+        self::HOT_NO  => 'red',
+    ];
+
+    protected $with = ['category', 'tag'];
+
+    protected $appends = ['tag_str','describe','content_str'];
+
 
     /**
-     * @param string $value
+     * @return string
+     */
+    public function getTagStrAttribute(): string
+    {
+        return $this->tag->pluck('name')->implode(',') ?? '';
+    }
+
+    /**
      * @return string
      */
     public function getContentStrAttribute(): string
     {
-        return Markdown::make($this->content) ?? '';
+        return (Parsedown::instance())->parse($this->content);
     }
+
+    /**
+     * @return BelongsTo
+     */
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(CategoryModel::class);
+    }
+
+    /**
+     * @return BelongsToMany
+     */
+    public function tag(): BelongsToMany
+    {
+        return $this->belongsToMany(TagModel::class, PostTagModel::class, 'post_id', 'tag_id');
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescribeAttribute(): string
+    {
+        $parsedown = new Parsedown();
+        return $parsedown->line(Str::limit($this->content,300));
+    }
+
+
 }

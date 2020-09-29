@@ -16,13 +16,14 @@
     <meta name="description" content="" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="{{ asset('js/app.js')  }}" defer></script>
     @livewireStyles
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
-@include('blog.nav')
+<livewire:nav/>
 @yield('content')
 @include('blog.footer')
 @livewireScripts
 </body>
-
+<script></script>
 </html>

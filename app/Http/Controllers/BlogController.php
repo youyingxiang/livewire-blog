@@ -22,8 +22,8 @@ class BlogController extends Controller
         return view('blog.detail');
     }
 
-    public function list(): View
+    public function category(string $category)
     {
-        return view('blog.list');
+//        return view('blog.list');
     }
 }

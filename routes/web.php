@@ -24,5 +24,5 @@ use Illuminate\Support\Facades\Route;
 Route::group([], function (Router $router) {
     $router->get('/', [\App\Http\Controllers\BlogController::class, 'index']);
     $router->get('/detail', [\App\Http\Controllers\BlogController::class, 'detail']);
-    $router->get('/list', [\App\Http\Controllers\BlogController::class, 'list']);
+    $router->get('/{category}', [\App\Http\Controllers\BlogController::class, 'category'])->name('home.category');
 });

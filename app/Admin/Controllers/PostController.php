@@ -5,6 +5,7 @@ namespace App\Admin\Controllers;
 use App\Admin\Repositories\Post;
 use App\Models\CategoryModel;
 use App\Models\PostModel;
+use App\Models\TagModel;
 use Dcat\Admin\Controllers\AdminController;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
@@ -21,12 +22,12 @@ class PostController extends AdminController
         return Grid::make(new Post(), function (Grid $grid) {
             $grid->column('id')->sortable();
             $grid->column('title');
-//            $grid->column('content')->display(function ($val){
-//                return $val;
-//            });
-            $grid->column('category_id');
-            $grid->column('is_hot');
-            $grid->column('hot_image');
+            $grid->column('category.name','分类名称');
+            
+            $grid->column('tag_str','标签');
+            $grid->column('is_hot')->using(PostModel::HOT)->label(PostModel::HOT_COLOR);
+            $grid->column('hot_image')->image('',50,50)->emp();
+            $grid->column('view','浏览数');
             $grid->column('created_at');
             $grid->createMode(Grid::CREATE_MODE_DEFAULT);
             $grid->showQuickEditButton(false);
@@ -43,13 +44,19 @@ class PostController extends AdminController
      */
     protected function form()
     {
-        return Form::make(new Post(), function (Form $form) {
+        return Form::make(new Post(['tag']), function (Form $form) {
             $form->text('title')->required();
-            $form->markdown('content')->languageUrl(admin_asset('@admin/dcat/plugins/editor-md/languages/zh-tw.js'))->required();
             $form->select('category_id')->options(CategoryModel::orderBy('id', 'desc')->pluck('name', 'id'))->required();
+            $form->markdown('content')->languageUrl(admin_asset('@admin/dcat/plugins/editor-md/languages/zh-tw.js'))->required();
+            $form->multipleSelect('tag', '标签')->options(TagModel::OrderBy('id','desc')->pluck('name','id'))->customFormat(function (array $v) {
+                return array_column($v, 'id');
+            });
+
             $form->select('is_hot')->options(PostModel::HOT)->when(PostModel::HOT_YES, function (Form $form) {
                 $form->image('hot_image')->autoUpload()->saveAsString();
-            })->default(0);
+            })->default(0)->required();
+            $form->number('view','浏览数量')->default(0)->required();
+
         });
     }
 }

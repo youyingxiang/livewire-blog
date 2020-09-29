@@ -21,30 +21,11 @@ class TagController extends AdminController
             $grid->column('id')->sortable();
             $grid->column('name');
             $grid->column('created_at');
-            $grid->column('updated_at')->sortable();
 
-            $grid->filter(function (Grid\Filter $filter) {
-                $filter->equal('id');
-            });
         });
     }
 
-    /**
-     * Make a show builder.
-     *
-     * @param mixed $id
-     *
-     * @return Show
-     */
-    protected function detail($id)
-    {
-        return Show::make($id, new Tag(), function (Show $show) {
-            $show->field('id');
-            $show->field('name');
-            $show->field('created_at');
-            $show->field('updated_at');
-        });
-    }
+
 
     /**
      * Make a form builder.
@@ -54,11 +35,7 @@ class TagController extends AdminController
     protected function form()
     {
         return Form::make(new Tag(), function (Form $form) {
-            $form->display('id');
             $form->text('name');
-
-            $form->display('created_at');
-            $form->display('updated_at');
         });
     }
 }
