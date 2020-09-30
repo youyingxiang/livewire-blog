@@ -42,7 +42,7 @@ class BlogController extends Controller
      */
     public function tag(string $tag): View
     {
-        return view('blog.tag',compact('tag'));
+        return view('blog.tag', compact('tag'));
     }
 
     public function test(): View

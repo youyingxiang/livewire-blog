@@ -52,7 +52,6 @@ class BlogRepository
         return $this->getTagById($tag_id)->post()->paginate($limit);
     }
 
-
     /**
      * @param int $tag_id
      * @return TagModel
@@ -61,5 +60,4 @@ class BlogRepository
     {
         return TagModel::find($tag_id);
     }
-
 }
