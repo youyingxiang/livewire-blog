@@ -24,6 +24,7 @@ class BlogController extends Controller
     public function detail(string $category_slug, int $id, BlogRepository $repository): View
     {
         $post = $repository->getPostById($id);
+
         return view('blog.detail', compact('post'));
     }
 
@@ -33,6 +34,6 @@ class BlogController extends Controller
      */
     public function category(?string $category_slug = null): View
     {
-         return view('blog.category');
+        return view('blog.category');
     }
 }
