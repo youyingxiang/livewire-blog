@@ -34,6 +34,6 @@ class BlogController extends Controller
      */
     public function category(?string $category_slug = null): View
     {
-        return view('blog.category',compact('category_slug'));
+        return view('blog.category', compact('category_slug'));
     }
 }
