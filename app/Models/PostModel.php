@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
- * App\Models\PostModel
+ * App\Models\PostModel.
  *
  * @property int $id
  * @property string $title 标题

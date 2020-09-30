@@ -3,7 +3,7 @@
 namespace App\Models;
 
 /**
- * App\Models\PartnerModel
+ * App\Models\PartnerModel.
  *
  * @property int $id
  * @property string $name 名称

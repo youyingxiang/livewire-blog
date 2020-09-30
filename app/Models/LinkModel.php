@@ -6,7 +6,7 @@ use Dcat\Admin\Traits\HasDateTimeFormatter;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Models\LinkModel
+ * App\Models\LinkModel.
  *
  * @property int $id
  * @property string $name 名称

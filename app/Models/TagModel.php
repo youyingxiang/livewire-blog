@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
- * App\Models\TagModel
+ * App\Models\TagModel.
  *
  * @property int $id
  * @property string $name 名称
