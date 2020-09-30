@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use Dcat\Admin\Models\Menu;
-use Dcat\Admin\Models\Role;
-use Dcat\Admin\Models\Permission;
 use Dcat\Admin\Models\Administrator;
+use Dcat\Admin\Models\Menu;
+use Dcat\Admin\Models\Permission;
+use Dcat\Admin\Models\Role;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
@@ -50,7 +50,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Administrator::first()->roles()->save(Role::first());
-
 
         Permission::insert([
             [
