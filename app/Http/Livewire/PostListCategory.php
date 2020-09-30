@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class PostList extends Component
+class PostListCategory extends Component
 {
     use WithPagination;
     /**
@@ -28,6 +28,6 @@ class PostList extends Component
         $repository = new BlogRepository();
         $posts = $repository->getListByCategoryPaginate($this->category_slug, 10);
 
-        return view('livewire.post-list', ['posts' => $posts]);
+        return view('livewire.post-list-category', ['posts' => $posts]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\CategoryModel;
 use App\Models\PostModel;
+use App\Models\TagModel;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -40,4 +41,25 @@ class BlogRepository
     {
         return CategoryModel::where('slug', $slug)->first();
     }
+
+    /**
+     * @param int $tag_id
+     * @param int $limit
+     * @return LengthAwarePaginator
+     */
+    public function getListByTagPaginate(int $tag_id, int $limit = 10): LengthAwarePaginator
+    {
+        return $this->getTagById($tag_id)->post()->paginate($limit);
+    }
+
+
+    /**
+     * @param int $tag_id
+     * @return TagModel
+     */
+    public function getTagById(int $tag_id): TagModel
+    {
+        return TagModel::find($tag_id);
+    }
+
 }

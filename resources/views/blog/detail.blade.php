@@ -25,7 +25,7 @@
                 <div class="divide-y xl:divide-y-0 divide-gray-200 xl:grid xl:grid-cols-4 xl:col-gap-6 pb-16 xl:pb-20"
                      style="grid-template-rows:auto 1fr">
                     <div class="divide-y divide-gray-200 xl:pb-0 xl:col-span-4 xl:row-span-2">
-                        <div class="prose max-w-none pt-10 pb-8 pl-5 pr-5 shadow-lg">
+                        <div class="prose max-w-none py-3 px-5">
                             <livewire:markdown :content="$post->content"/>
                         </div>
                     </div>

@@ -7,6 +7,8 @@
                 <div class="font-normal text-xl text-gray-500 hover:underline hover:text-indigo-600 ">{{ $post->title }}</div>
             </a>
         </div>
-        <livewire:tag-list :tags="$post->tag"/>
+        <div class="px-6 pb-6">
+            <livewire:tag-list :tags="$post->tag"/>
+        </div>
     </div>
 </li>

@@ -13,11 +13,14 @@ class Category extends Component
      */
     public $category;
 
+    public $slug;
+
     /**
      * @param CategoryModel $category
      */
     public function mount(CategoryModel $category): void
     {
+        $this->slug = request()->route()->parameter('category_slug');
         $this->category = $category;
     }
 

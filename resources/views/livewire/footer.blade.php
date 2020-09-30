@@ -1,4 +1,4 @@
-<div class="bg-white mt-16">
+<div class="bg-white mt-5">
     <div class="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <nav class="-mx-5 -my-2 flex flex-wrap justify-center">
             <div class="py-2 text-base leading-6 text-gray-700 hover:text-gray-900">友情链接：</div>

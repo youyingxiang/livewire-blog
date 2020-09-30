@@ -13,9 +13,10 @@
     <meta property="og:image:height" content="500">
     <meta property="og:description" content="{{ $desc }}">
     <meta property="og:site_name" content="yxx的个人博客">
-    <meta name="keywords" content="{{ $title }}" />
+    <meta name="keywords" content="{{ $title }}"/>
     <meta name="description" content="{{ $desc }}"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,800,800i,900,900i&v1.7.4">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,800,800i,900,900i&v1.7.4">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('css')
     <script src="{{ asset('js/app.js')  }}" defer></script>
@@ -24,7 +25,7 @@
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
 <livewire:nav/>
-@yield('content')
+    @yield('content')
 <livewire:footer/>
 @livewireScripts
 </body>

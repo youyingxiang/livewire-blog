@@ -45,7 +45,7 @@ class PostModel extends BaseModel
      */
     public function getDetailUrlAttribute(): string
     {
-        return route('home.detail', ['category_slug' => $this->category->slug, 'id' => $this->id]);
+        return route('home.detail', ['id' => $this->id]);
     }
 
     /**
