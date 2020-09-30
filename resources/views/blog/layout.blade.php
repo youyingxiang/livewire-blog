@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{$title}}</title>
-    <meta property="og:title" content="">
+    <meta property="og:title" content="{{$title}}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="https://tallstack.dev/images/tallstack-og.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:description" content="">
-    <meta property="og:site_name" content="">
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <meta property="og:url" content="{{ request()->url() }}">
+    <meta property="og:image" content="">
+    <meta property="og:image:width" content="327">
+    <meta property="og:image:height" content="327">
+    <meta property="og:description" content="{{ $desc }}">
+    <meta property="og:site_name" content="yxx的个人博客">
+    <meta name="description" content="{{ $desc }}"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,800,800i,900,900i&v1.7.4">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('css')
     <script src="{{ asset('js/app.js')  }}" defer></script>
