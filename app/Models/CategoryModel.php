@@ -49,6 +49,6 @@ class CategoryModel extends BaseModel
      */
     public function getTargetBlankAttribute(): string
     {
-        return $this->is_link ? 'target="_blank"' : '';
+        return url()->isValidUrl($this->link) ? 'target="_blank"' : '';
     }
 }

@@ -6,7 +6,7 @@
                 <div class="lg:w-0 lg:flex-1">
                     <a href="/" class="flex">
                         <img class="h-8 w-auto sm:h-10 rounded-full text-white shadow-solid"
-                             src="http://wxy.cdn.0736tw.com/images/24e02b5d4d82a6abd3b638e18bac466f.png" alt="yxx的个人博客">
+                             src="{{ asset('images/logo.png') }}" alt="yxx的个人博客">
                     </a>
                 </div>
                 <div class="-mr-2 -my-2 md:hidden">
@@ -47,7 +47,7 @@
                         <div>
                             <a href="/" class="flex">
                                 <img class="h-8 w-auto sm:h-10 rounded-full text-white shadow-solid"
-                                     src="http://wxy.cdn.0736tw.com/images/24e02b5d4d82a6abd3b638e18bac466f.png" alt="yxx的个人博客">
+                                     src="{{ asset('images/logo.png') }}" alt="yxx的个人博客">
                             </a>
                         </div>
                         <div class="-mr-2">
