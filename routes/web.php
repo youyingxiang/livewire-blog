@@ -25,4 +25,6 @@ Route::group([], function (Router $router) {
     $router->get('/', [\App\Http\Controllers\BlogController::class, 'index']);
     $router->get('/category/{category_slug?}', [\App\Http\Controllers\BlogController::class, 'category'])->name('home.category');
     $router->get('/{category_slug}/{id}', [\App\Http\Controllers\BlogController::class, 'detail'])->name('home.detail');
+
+    $router->get('/test', [\App\Http\Controllers\BlogController::class, 'test']);
 });

@@ -36,4 +36,10 @@ class BlogController extends Controller
     {
         return view('blog.category',compact('category_slug'));
     }
+
+
+    public function test(): View
+    {
+        return view('blog.test');
+    }
 }
