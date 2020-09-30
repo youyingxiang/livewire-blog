@@ -41,7 +41,7 @@ class CategoryModel extends BaseModel
      */
     public function getUrlAttribute(): string
     {
-        return $this->is_link ? $this->link : route('home.category', ['category' => $this->slug ?? $this->name]);
+        return $this->is_link ? $this->link : route('home.category', ['category_slug' => $this->slug]);
     }
 
     /**

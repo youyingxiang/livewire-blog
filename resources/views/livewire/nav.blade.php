@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
                 <div class="lg:w-0 lg:flex-1">
-                    <a href="#" class="flex">
+                    <a href="/" class="flex">
                         <img class="h-8 w-auto sm:h-10 rounded-full text-white shadow-solid"
                              src="http://wxy.cdn.0736tw.com/images/24e02b5d4d82a6abd3b638e18bac466f.png"
                              alt="Workflow">

@@ -24,7 +24,7 @@
 <body class="bg-gray-100 h-screen antialiased leading-none">
 <livewire:nav/>
 @yield('content')
-@include('blog.footer')
+<livewire:footer/>
 @livewireScripts
 </body>
 @yield('js')

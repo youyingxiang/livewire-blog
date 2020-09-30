@@ -16,19 +16,23 @@ class BlogController extends Controller
     }
 
     /**
-     * @param string $category
+     * @param string $category_slug
      * @param int $id
      * @param BlogRepository $repository
      * @return View
      */
-    public function detail(string $category, int $id, BlogRepository $repository): View
+    public function detail(string $category_slug, int $id, BlogRepository $repository): View
     {
         $post = $repository->getPostById($id);
-        return view('blog.detail',compact('post'));
+        return view('blog.detail', compact('post'));
     }
 
-    public function category(string $category = null)
+    /**
+     * @param null|string $category_slug
+     * @return View
+     */
+    public function category(?string $category_slug = null): View
     {
-
+         return view('blog.category');
     }
 }

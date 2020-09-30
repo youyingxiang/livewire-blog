@@ -22,6 +22,7 @@
     },
     "dependencies": {
         "alpinejs": "^2.7.0",
-        "editor.md": "^1.5.0"
+        "editor.md": "^1.5.0",
+        "jquery": "^3.5.1"
     }
 }
