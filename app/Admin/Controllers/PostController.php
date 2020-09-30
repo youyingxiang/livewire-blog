@@ -47,7 +47,7 @@ class PostController extends AdminController
         return Form::make(new Post(['tag']), function (Form $form) {
             $form->text('title')->required();
             $form->select('category_id')->options(CategoryModel::orderBy('id', 'desc')->pluck('name', 'id'))->required();
-            $form->textarea('introduce','简介')->required()->saveAsString();
+            $form->textarea('introduce', '简介')->required()->saveAsString();
             $form->markdown('content')->languageUrl(admin_asset('@admin/dcat/plugins/editor-md/languages/zh-tw.js'))->required();
             $form->multipleSelect('tag', '标签')->options(TagModel::OrderBy('id', 'desc')->pluck('name', 'id'))->customFormat(function (array $v) {
                 return array_column($v, 'id');

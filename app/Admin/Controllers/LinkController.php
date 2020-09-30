@@ -3,10 +3,9 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Repositories\Link;
+use Dcat\Admin\Controllers\AdminController;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
-use Dcat\Admin\Show;
-use Dcat\Admin\Controllers\AdminController;
 
 class LinkController extends AdminController
 {
@@ -25,7 +24,6 @@ class LinkController extends AdminController
             $grid->column('updated_at')->sortable();
         });
     }
-
 
     /**
      * Make a form builder.

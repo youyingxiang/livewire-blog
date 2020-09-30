@@ -23,9 +23,10 @@ class BlogRepository
      * @param int $limit
      * @return LengthAwarePaginator
      */
-    public function getListByCategoryPaginate(?string $category_slug,int $limit = 10):LengthAwarePaginator
+    public function getListByCategoryPaginate(?string $category_slug, int $limit = 10): LengthAwarePaginator
     {
         $category = $category_slug ? $this->getCategoryBySlug($category_slug) : null;
+
         return PostModel::where(function (Builder $builder) use ($category) {
             $category && $builder->where('category_id', $category->id);
         })->paginate($limit);

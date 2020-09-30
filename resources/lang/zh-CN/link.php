@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 return [
     'labels' => [
         'Link' => '友情链接',
