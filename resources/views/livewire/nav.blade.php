@@ -9,7 +9,12 @@
                              src="{{ asset('images/logo.png') }}" alt="yxx的个人博客">
                     </a>
                 </div>
+                <div class="md:hidden">
+                    <livewire:search/>
+                </div>
+
                 <div class="-mr-2 -my-2 md:hidden">
+
                     <button @click="open = true" type="button"
                             class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                         <!-- Heroicon name: menu -->
@@ -24,22 +29,22 @@
                         <livewire:category :category="$category" :key="$category->id"/>
                     @endforeach
                 </nav>
+
+
                 <div class="hidden md:flex items-center justify-end space-x-8 md:flex-1 lg:w-0">
-                    <a href="#"
-                       class="whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900">
-                        登陆
-                    </a>
+                    <livewire:search/>
                     <span class="inline-flex rounded-md shadow-sm">
                         <a href="#"
                            class="whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
-                          注册
+                          登陆
                         </a>
                     </span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden" style="z-index: 999;display: none" x-show="open">
+    <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+         style="z-index: 999;display: none" x-show="open">
         <div class="rounded-lg shadow-lg">
             <div class="rounded-lg shadow-xs bg-white divide-y-2 divide-gray-50">
                 <div class="pt-5 pb-6 px-5 space-y-6">
@@ -91,3 +96,5 @@
         </div>
     </div>
 </div>
+
+

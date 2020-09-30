@@ -17,12 +17,13 @@ class Markdown extends Component
      */
     public $em_id;
 
+
     /**
      * 初始化.
      */
     public function mount(string $content): void
     {
-        $this->em_id = 'mdk-'.Str::random(10);
+        $this->em_id   = 'mdk-' . Str::random(10);
         $this->content = $content;
     }
 
