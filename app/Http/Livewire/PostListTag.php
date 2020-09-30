@@ -23,7 +23,7 @@ class PostListTag extends Component
      */
     public function mount(Request $request): void
     {
-        $tag = explode("-", $request->route()->parameter('tag'));
+        $tag = explode('-', $request->route()->parameter('tag'));
         [$this->tag_name, $this->tag_id] = $tag;
     }
 
@@ -35,6 +35,7 @@ class PostListTag extends Component
         $repository = new BlogRepository();
 
         $posts = $repository->getListByTagPaginate($this->tag_id);
+
         return view('livewire.post-list-tag', ['posts' => $posts]);
     }
 }

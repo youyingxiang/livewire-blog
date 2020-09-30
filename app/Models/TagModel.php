@@ -18,6 +18,6 @@ class TagModel extends BaseModel
 
     public function getTagListUrlAttribute(): string
     {
-        return route('home.tag', ['tag' => $this->name . '-' . $this->id]);
+        return route('home.tag', ['tag' => $this->name.'-'.$this->id]);
     }
 }
