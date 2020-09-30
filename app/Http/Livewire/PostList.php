@@ -14,6 +14,7 @@ class PostList extends Component
      * @var string
      */
     public $category_slug;
+
     /**
      * 初始化.
      */
@@ -25,7 +26,8 @@ class PostList extends Component
     public function render()
     {
         $repository = new BlogRepository();
-        $posts = $repository->getListByCategoryPaginate($this->category_slug,10);
-        return view('livewire.post-list',['posts' => $posts]);
+        $posts = $repository->getListByCategoryPaginate($this->category_slug, 10);
+
+        return view('livewire.post-list', ['posts' => $posts]);
     }
 }

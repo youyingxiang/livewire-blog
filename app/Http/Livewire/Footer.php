@@ -9,7 +9,6 @@ use Livewire\Component;
 
 class Footer extends Component
 {
-
     /**
      * @var Collection
      */
@@ -26,7 +25,7 @@ class Footer extends Component
     /**
      * @return View
      */
-    public function render():View
+    public function render(): View
     {
         return view('livewire.footer');
     }
