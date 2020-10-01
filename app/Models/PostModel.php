@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Extensions\Parsedown;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -75,7 +76,7 @@ class PostModel extends BaseModel
      */
     public function getContentStrAttribute(): string
     {
-        return '';
+        return Parsedown::instance()->parse($this->content);
     }
 
     /**
@@ -85,6 +86,7 @@ class PostModel extends BaseModel
     {
         return route('home.detail', ['id' => $this->id]);
     }
+    
 
     /**
      * @return BelongsTo

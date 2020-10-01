@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\BlogRepository;
 use Illuminate\View\View;
+use Symfony\Component\Console\Descriptor\MarkdownDescriptor;
 
 class BlogController extends Controller
 {

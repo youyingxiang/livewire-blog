@@ -15,7 +15,7 @@
                                 </div>
                             </dl>
                             <div>
-                                <h1 class="text-2xl leading-9 font-extrabold text-gray-900 tracking-tight sm:leading-10  md:leading-14">{{ $post->title }}</h1>
+                                <h1 class="text-2xl leading-9 font-extrabold text-gray-900 tracking-tight sm:px-2 sm:leading-10  md:leading-14">{{ $post->title }}</h1>
                             </div>
                             <div class="mt-1">
                                 <livewire:tag-list :tags="$post->tag"/>
@@ -26,7 +26,7 @@
                          style="grid-template-rows:auto 1fr">
                         <div class="divide-y divide-gray-200 xl:pb-0">
                             <div class="prose max-w-none py-3 px-5">
-                                <livewire:markdown :content="$post->content"/>
+                                {!! $post->content_str !!}
                             </div>
                         </div>
 
