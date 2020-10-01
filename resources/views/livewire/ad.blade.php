@@ -13,7 +13,7 @@
                 </a>
             </div>
             <div class="ml-3 inline-flex rounded-md shadow">
-                <a href="tel:0147-88469258" target="_blank"
+                <a href="tel:18123670736" target="_blank"
                    class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
                     电话
                 </a>
