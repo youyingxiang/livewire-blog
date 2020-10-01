@@ -1,7 +1,7 @@
 @extends('blog.layout',['title'=> $post->title,'desc' => $post->introduce])
 @section('content')
     <div class="block md:flex break-all">
-        <div class="bg-white max-w-4xl shadow-lg">
+        <div class="bg-white md:w-3/4 shadow-lg">
             <main>
                 <article class="xl:divide-y xl:divide-gray-200">
                     <header class="pt-5 xl:pb-2">

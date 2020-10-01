@@ -2,7 +2,7 @@
 
 @section('content')
     <main>
-        <div class="flex">
+        <div class="block md:flex break-all">
         <livewire:post-list-category/>
         <livewire:right-card/>
         </div>
