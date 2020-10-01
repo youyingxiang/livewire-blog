@@ -1,6 +1,6 @@
 <li>
     <div class="max-w-sm rounded overflow-hidden shadow-xl">
-        <img class="w-full h-64 px-6 py-4" src="{{ Storage::url($post->hot_image) }}"
+        <img class="w-full h-64 px-6 py-8 flex-shrink-0" src="{{ Storage::url($post->hot_image) }}"
              alt="{{ $post->title }}">
         <div class="px-6 py-4">
             <a href="{{ $post->detail_url }}">

@@ -14,14 +14,17 @@
     <script src="{{ asset('vendors/dcat-admin/dcat/plugins/editor-md/lib/jquery.flowchart.min.js') }}"></script>
     <script src="{{ asset('vendors/dcat-admin/dcat/plugins/editor-md/editormd.min.js') }}"></script>
     <script>
-        editormd.markdownToHTML("{{ $em_id }}", {
-            htmlDecode: "style,script,iframe",
-            emoji: true,
-            taskList: true,
-            tex: true,  // 默认不解析
-            flowChart: true,  // 默认不解析
-            sequenceDiagram: true  // 默认不解析
-        });
+        $(function () {
+            editormd.markdownToHTML("{{ $em_id }}", {
+                htmlDecode: "style,script,iframe",
+                emoji: true,
+                taskList: true,
+                tex: true,  // 默认不解析
+                flowChart: true,  // 默认不解析
+                sequenceDiagram: true  // 默认不解析
+            });
+        })
+
     </script>
 @endsection
 <div id="{{ $em_id }}">

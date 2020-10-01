@@ -32,6 +32,7 @@
 
 
                 <div class="hidden md:flex items-center justify-end space-x-8 md:flex-1 lg:w-0">
+
                     <livewire:search/>
                     <span class="inline-flex rounded-md shadow-sm">
                         <a href="#"
@@ -96,5 +97,7 @@
         </div>
     </div>
 </div>
+
+{{--<livewire:login/>--}}
 
 

@@ -1,9 +1,9 @@
-<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-50 mt-10">
+<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 bg-white mt-10">
     <div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
         <h2 class="text-2xl leading-9 font-normal tracking-tight text-gray-900 sm:text-3xl sm:leading-10">
             您是否有开发相关的需求？
             <br>
-            <span class="text-indigo-600">请通过右边方式联系我</span>
+            <span class="text-indigo-600">请联系我</span>
         </h2>
         <div class="mt-8 flex lg:flex-shrink-0 lg:mt-0">
             <div class="inline-flex rounded-md shadow">

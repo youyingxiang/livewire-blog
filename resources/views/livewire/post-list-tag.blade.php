@@ -1,4 +1,4 @@
-<div class="divide-y divide-gray-200">
+<div class="divide-y divide-gray-200 bg-white px-5">
     <div class="pt-6 pb-8 space-y-2 md:space-y-5">
         <p class="text-lg leading-7 text-gray-500">{{ $tag_name }}</p>
     </div>
