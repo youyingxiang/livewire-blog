@@ -1,4 +1,4 @@
-@extends('blog.layout',['title'=> $category_slug,'desc'=>$category_slug])
+@extends('blog.layout',['title'=> $category_slug])
 
 @section('content')
     <main>
