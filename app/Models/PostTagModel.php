@@ -3,7 +3,7 @@
 namespace App\Models;
 
 /**
- * App\Models\PostTagModel
+ * App\Models\PostTagModel.
  *
  * @property int $id
  * @property int $post_id 文章id

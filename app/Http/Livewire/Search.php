@@ -30,7 +30,7 @@ class Search extends Component
     ];
 
     /**
-     * 初始化
+     * 初始化.
      */
     public function mount(): void
     {
@@ -42,9 +42,10 @@ class Search extends Component
      */
     public function render(): View
     {
-        $posts = $this->search ? PostModel::where('title', 'like', '%' . $this->search . '%')->paginate(5) : [];
+        $posts = $this->search ? PostModel::where('title', 'like', '%'.$this->search.'%')->paginate(5) : [];
+
         return view('livewire.search', [
-            'posts' => $posts
+            'posts' => $posts,
         ]);
     }
 }

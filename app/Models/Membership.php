@@ -5,7 +5,7 @@ namespace App\Models;
 use Laravel\Jetstream\Membership as JetstreamMembership;
 
 /**
- * App\Models\Membership
+ * App\Models\Membership.
  *
  * @method static \Illuminate\Database\Eloquent\Builder|Membership newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Membership newQuery()

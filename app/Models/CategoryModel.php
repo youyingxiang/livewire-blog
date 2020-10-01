@@ -5,7 +5,7 @@ namespace App\Models;
 use Dcat\Admin\Traits\ModelTree;
 
 /**
- * App\Models\CategoryModel
+ * App\Models\CategoryModel.
  *
  * @property int $id
  * @property string $name 标题
