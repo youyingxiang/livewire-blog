@@ -1,4 +1,4 @@
-<div class="bg-white ml-0 md:ml-5 py-5 px-5 shadow-lg mt-5">
+<div class="bg-white ml-0 py-5 px-5 shadow-lg mt-5">
     <div class="lg:text-left">
         <p class="text-base leading-6 text-gray-600 font-semibold tracking-wide uppercase">博客架构</p>
     </div>
