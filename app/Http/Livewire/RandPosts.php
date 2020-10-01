@@ -12,6 +12,7 @@ class RandPosts extends Component
      * @var Collection
      */
     public $posts;
+
     /**
      * 初始化.
      */
@@ -19,6 +20,7 @@ class RandPosts extends Component
     {
         $this->posts = PostModel::latest()->limit(5)->get();
     }
+
     public function render()
     {
         return view('livewire.rand-posts');
