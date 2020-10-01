@@ -1,4 +1,4 @@
-<div class="divide-y divide-gray-200 bg-white px-4 xl:px-6 max-w-3xl">
+<div class="divide-y divide-gray-200 bg-white px-4 xl:px-6 max-w-4xl">
     <div class="pt-6 pb-8 space-y-2 md:space-y-5">
         <p class="text-lg leading-7 text-gray-500">{{ $category_slug ? $category_slug . ' 相关分类'  : '文章列表'}}</p>
     </div>

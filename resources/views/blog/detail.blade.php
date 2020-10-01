@@ -1,7 +1,7 @@
 @extends('blog.layout',['title'=> $post->title,'desc' => $post->introduce])
 @section('content')
     <div class="flex">
-        <div class="bg-white max-w-3xl shadow-lg">
+        <div class="bg-white max-w-4xl shadow-lg">
             <main>
                 <article class="xl:divide-y xl:divide-gray-200">
                     <header class="pt-5 xl:pb-2">
@@ -15,8 +15,7 @@
                                 </div>
                             </dl>
                             <div>
-                                <h1 class="text-2xl leading-9 font-extrabold text-gray-900 tracking-tight sm:leading-10  md:leading-14">
-                                    {{ $post->title }}</h1>
+                                <h1 class="text-2xl leading-9 font-extrabold text-gray-900 tracking-tight sm:leading-10  md:leading-14">{{ $post->title }}</h1>
                             </div>
                             <div class="mt-1">
                                 <livewire:tag-list :tags="$post->tag"/>
@@ -37,6 +36,4 @@
         </div>
         <livewire:right-card/>
     </div>
-
-
 @endsection
