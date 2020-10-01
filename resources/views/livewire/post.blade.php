@@ -1,5 +1,5 @@
 <li class="py-5">
-    <article class="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
+    <article class="space-y-2 max-w-6xl mx-auto xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
         <dl>
             <dt class="sr-only">Published on</dt>
             <dd class="text-base leading-6 font-medium text-gray-500">
