@@ -1,7 +1,7 @@
 @extends('blog.layout',['title'=> $post->title,'desc' => $post->introduce])
 @section('content')
     <div class="flex">
-        <div class="bg-white max-w-3xl xl:px-6 shadow-lg">
+        <div class="bg-white max-w-3xl shadow-lg">
             <main>
                 <article class="xl:divide-y xl:divide-gray-200">
                     <header class="pt-5 xl:pb-2">
@@ -23,10 +23,10 @@
                             </div>
                         </div>
                     </header>
-                    <div class="divide-y xl:divide-y-0 divide-gray-200 pb-16 xl:pb-20"
+                    <div class="divide-y xl:divide-y-0 divide-gray-200"
                          style="grid-template-rows:auto 1fr">
                         <div class="divide-y divide-gray-200 xl:pb-0">
-                            <div class="prose max-w-none py-8 px-5">
+                            <div class="prose max-w-none py-3 px-5">
                                 <livewire:markdown :content="$post->content"/>
                             </div>
                         </div>
