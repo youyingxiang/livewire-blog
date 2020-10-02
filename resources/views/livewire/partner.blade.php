@@ -1,5 +1,5 @@
 <li>
-    <div class="flex">
+    <div class="flex mt-5 md:mt-0">
         <div class="flex-shrink-0">
             <div class="flex items-center justify-center h-12 w-12 rounded-md  text-white">
                 <img class="h-10 w-10"

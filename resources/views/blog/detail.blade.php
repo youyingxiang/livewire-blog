@@ -15,7 +15,7 @@
                                 </div>
                             </dl>
                             <div>
-                                <h1 class="text-2xl leading-9 font-extrabold text-gray-900 tracking-tight sm:px-2 sm:leading-10  md:leading-14">{{ $post->title }}</h1>
+                                <h1 class="text-2xl leading-9 font-extrabold text-gray-900 tracking-tight px-2 sm:leading-10  md:leading-14">{{ $post->title }}</h1>
                             </div>
                             <div class="mt-1">
                                 <livewire:tag-list :tags="$post->tag"/>
