@@ -1,4 +1,4 @@
-@extends('blog.layout',['title'=> $tag])
+@extends('blog.layout')
 
 @section('content')
     <div class="block md:flex break-all">
