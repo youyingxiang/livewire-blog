@@ -13,3 +13,10 @@ if (! function_exists('blog_default_desc')) {
         return '个人博客模板,博客模板,博客系统,技术博客,个人博客,ERP,laravel博客,php博客,laravel-admin,dcat-admin,laravel-livewire,livewire';
     }
 }
+
+if (! function_exists('user_img')) {
+    function user_img()
+    {
+        return Auth::check() ? Auth::user()->profile_photo_path :asset('images/logo.png');
+    }
+}

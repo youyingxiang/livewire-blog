@@ -6,7 +6,7 @@
                 <div class="lg:w-0 lg:flex-1">
                     <a href="/" class="flex">
                         <img class="h-8 w-auto sm:h-10 rounded-full text-white shadow-solid"
-                             src="{{ asset('images/logo.png') }}" alt="yxx的个人博客">
+                             src="{{ user_img() }}" alt="游兴祥的个人博客">
                     </a>
                 </div>
                 <div class="md:hidden">
@@ -32,12 +32,19 @@
 
                 <div class="hidden md:flex items-center justify-end space-x-8 md:flex-1 lg:w-0">
                     <livewire:search/>
-                    <span class="inline-flex rounded-md shadow-sm">
+                    @if(Auth::check())
+                        <a href="{{ route('oauth.logout') }}"
+                           class="whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:border-indigo-700 focus:outline-none focus:text-gray-900">
+                            注销
+                        </a>
+                    @else
+                        <span class="inline-flex rounded-md shadow-sm">
                         <a @click="show_login = true" href="javascript:void(0)"
                            class="whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
                           登陆
                         </a>
                     </span>
+                    @endif
                 </div>
             </div>
         </div>
@@ -51,7 +58,7 @@
                         <div>
                             <a href="/" class="flex">
                                 <img class="h-8 w-auto sm:h-10 rounded-full text-white shadow-solid"
-                                     src="{{ asset('images/logo.png') }}" alt="yxx的个人博客">
+                                     src="{{ user_img() }}" alt="游兴祥的个人博客">
                             </a>
                         </div>
                         <div class="-mr-2">
@@ -77,10 +84,17 @@
 
                     <div class="space-y-6">
                         <span class="w-full flex rounded-md shadow-sm">
-                            <a href="javascript:void(0)" @click="show_login = true"
-                               class="w-full flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
+                            @if(Auth::check())
+                                <a href="{{ route('oauth.logout') }}"
+                                   class="w-full flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
+                                注销
+                            </a>
+                            @else
+                                 <a href="javascript:void(0)" @click="show_login = true"
+                                   class="w-full flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
                                 登陆
                             </a>
+                            @endif
                         </span>
                     </div>
                 </div>

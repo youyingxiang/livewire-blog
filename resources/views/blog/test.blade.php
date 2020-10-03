@@ -1,9 +1,46 @@
-@extends('blog.layout',[
-'title'=>'个人博客模板,博客模板,博客系统,技术博客,个人博客,ERP,laravel博客,php博客,laravel-admin,dcat-admin,laravel-livewire,livewire',
-'desc' => 'yxx的博客,dcat-admin,laravel-admin开发的分享,erp 开发的分享.'
-])
+@extends('blog.layout')
+@section('css')
+    <style>
 
+        blockquote {
+            border-left:#eee solid 5px;
+            padding-left:20px;
+        }
+
+         ul li {
+             line-height: 20px;
+         }
+
+
+         code {
+             color:#D34B62;
+             background: #F6F6F6;
+         }
+        }
+    </style>
+@endsection
+@section('js')
+    <script src="{{ asset('js/showdown.js') }}"></script>
+    <script type="text/javascript">
+        function convert(){
+            var text = document.getElementById("oriContent").value;
+            var converter = new showdown.Converter();
+            var html = converter.makeHtml(text);
+            document.getElementById("result").innerHTML = html;
+        }
+    </script>
+@endsection
 @section('content')
+    <div>
+
+
+        <textarea id="oriContent" style="height:400px;width:600px;" onkeyup="convert()"></textarea>
+
+
+        <div id="result"></div>
+
+    </div>
+
     {{--<div x-data="{ open: false }">--}}
     {{--<button @click="open = true">展開下拉選單</button>--}}
 
@@ -50,22 +87,22 @@
     {{--<button x-data @click="$dispatch('test-event', { show_login: true })">22222</button>--}}
 
     {{--<div x-ref="foo"></div><button x-on:click="$refs.foo.innerText = 'bar'">你好啊</button></button>--}}
-    <div x-data="{open:true,login:false}">
-        <div>
-            <div x-show="open">
-                你好啊
-            </div>
-            <button @click="login = true">
-                登陆
-            </button>
+    {{--<div x-data="{open:true,login:false}">--}}
+    {{--<div>--}}
+    {{--<div x-show="open">--}}
+    {{--你好啊--}}
+    {{--</div>--}}
+    {{--<button @click="login = true">--}}
+    {{--登陆--}}
+    {{--</button>--}}
 
-        </div>
-        <button @click="open = false">
-            点击
-        </button>
+    {{--</div>--}}
+    {{--<button @click="open = false">--}}
+    {{--点击--}}
+    {{--</button>--}}
 
-    </div>
-    <div x-show="login">
-        登陆
-    </div>
+    {{--</div>--}}
+    {{--<div x-show="login">--}}
+    {{--登陆--}}
+    {{--</div>--}}
 @endsection

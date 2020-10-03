@@ -22,11 +22,14 @@ use Illuminate\Support\Facades\Route;
 //    return view('dashboard');
 //})->name('dashboard');
 Route::group([], function (Router $router) {
-    $router->get('/', [\App\Http\Controllers\BlogController::class, 'index']);
+    $router->get('/', [\App\Http\Controllers\BlogController::class, 'index'])->name('home.index');
     $router->get('/category/{category_slug?}', [\App\Http\Controllers\BlogController::class, 'category'])->name('home.category');
 
     $router->get('/tag/{tag}', [\App\Http\Controllers\BlogController::class, 'tag'])->name('home.tag');
     $router->get('/detail/{id}', [\App\Http\Controllers\BlogController::class, 'detail'])->name('home.detail');
+    $router->get('/oauth/{driver}', [\App\Http\Controllers\AuthController::class, 'redirectToProvider'])->name('oauth');
+    $router->get('/oauth/{driver}/callback', [\App\Http\Controllers\AuthController::class, 'handleProviderCallback'])->name('oauth.callback');
+    $router->get('logout',[App\Http\Controllers\AuthController::class,'logout'])->name('oauth.logout');
 
     $router->get('/test', [\App\Http\Controllers\BlogController::class, 'test']);
 });

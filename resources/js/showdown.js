@@ -1,0 +1,1 @@
+window.showdown = require('showdown');

@@ -14355,7 +14355,114 @@
      
 }
 
-        namespace Facade\Ignition\Facades { 
+        namespace Overtrue\LaravelSocialite { 
+            /**
+     * Class Socialite.
+     *
+     */ 
+        class Socialite {
+                    /**
+         * Set config instance.
+         *
+         * @param \Overtrue\Socialite\Config $config
+         * @return \Overtrue\Socialite\SocialiteManager 
+         * @static 
+         */ 
+        public static function config($config)
+        {
+                        /** @var \Overtrue\Socialite\SocialiteManager $instance */
+                        return $instance->config($config);
+        }
+                    /**
+         * Get a driver instance.
+         *
+         * @param string $driver
+         * @return \Overtrue\Socialite\ProviderInterface 
+         * @static 
+         */ 
+        public static function driver($driver)
+        {
+                        /** @var \Overtrue\Socialite\SocialiteManager $instance */
+                        return $instance->driver($driver);
+        }
+                    /**
+         * 
+         *
+         * @param \Symfony\Component\HttpFoundation\Request $request
+         * @return \Overtrue\Socialite\SocialiteManager 
+         * @static 
+         */ 
+        public static function setRequest($request)
+        {
+                        /** @var \Overtrue\Socialite\SocialiteManager $instance */
+                        return $instance->setRequest($request);
+        }
+                    /**
+         * 
+         *
+         * @return \Symfony\Component\HttpFoundation\Request 
+         * @static 
+         */ 
+        public static function getRequest()
+        {
+                        /** @var \Overtrue\Socialite\SocialiteManager $instance */
+                        return $instance->getRequest();
+        }
+                    /**
+         * Register a custom driver creator Closure.
+         *
+         * @param string $driver
+         * @param \Closure $callback
+         * @return \Overtrue\Socialite\SocialiteManager 
+         * @static 
+         */ 
+        public static function extend($driver, $callback)
+        {
+                        /** @var \Overtrue\Socialite\SocialiteManager $instance */
+                        return $instance->extend($driver, $callback);
+        }
+                    /**
+         * Get all of the created "drivers".
+         *
+         * @return \Overtrue\Socialite\ProviderInterface[] 
+         * @static 
+         */ 
+        public static function getDrivers()
+        {
+                        /** @var \Overtrue\Socialite\SocialiteManager $instance */
+                        return $instance->getDrivers();
+        }
+                    /**
+         * Build an OAuth 2 provider instance.
+         *
+         * @param string $provider
+         * @param array $config
+         * @return \Overtrue\Socialite\ProviderInterface 
+         * @static 
+         */ 
+        public static function buildProvider($provider, $config)
+        {
+                        /** @var \Overtrue\Socialite\SocialiteManager $instance */
+                        return $instance->buildProvider($provider, $config);
+        }
+                    /**
+         * Format the server configuration.
+         *
+         * @param array $config
+         * @return array 
+         * @static 
+         */ 
+        public static function formatConfig($config)
+        {
+                        /** @var \Overtrue\Socialite\SocialiteManager $instance */
+                        return $instance->formatConfig($config);
+        }
+         
+    }
+     
+}
+
+    namespace Facade\Ignition\Facades { 
             /**
      * Class Flare.
      *
@@ -18450,6 +18557,7 @@ namespace  {
             class URL extends \Illuminate\Support\Facades\URL {}
             class Validator extends \Illuminate\Support\Facades\Validator {}
             class View extends \Illuminate\Support\Facades\View {}
+            class Socialite extends \Overtrue\LaravelSocialite\Socialite {}
             class Flare extends \Facade\Ignition\Facades\Flare {}
             class Agent extends \Jenssegers\Agent\Facades\Agent {}
             class Livewire extends \Livewire\Livewire {}
