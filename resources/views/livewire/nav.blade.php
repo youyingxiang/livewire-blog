@@ -1,5 +1,5 @@
 <div x-data="{ open: false }">
-    <div class="fixed md:relative inset-x-0 z-10 overflow-y-auto">
+    <div class="fixed md:relative inset-x-0 z-10">
         <div class="relative bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
                 <div
