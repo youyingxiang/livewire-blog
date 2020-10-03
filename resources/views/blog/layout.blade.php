@@ -26,7 +26,7 @@
 <body class="bg-gray-100 antialiased leading-none">
 
 <livewire:nav/>
-<div class="md:mt-5" id="components">
+<div class="mt-0 md:mt-5 pt-24 md:pt-0" id="components">
     <div class="max-w-screen-xl mx-auto px-4 sm:px-4 lg:px-8 py-5 bg-gray">
         @yield('content')
     </div>
