@@ -23,7 +23,7 @@
     @livewireStyles
 
 </head>
-<body class="bg-gray-100 antialiased leading-none">
+<body class="bg-gray-100 antialiased leading-none" x-data="{ mobile_menu: false,show_login : false}">
 
 <livewire:nav/>
 <div class="mt-0 md:mt-5 pt-24 md:pt-0" id="components">
