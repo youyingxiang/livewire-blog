@@ -3,7 +3,7 @@
            class="focus:shadow-outline-indigo focus:text-indigo-600 px-4 py-2 leading-tight form-input"
            placeholder="search">
     @if(!empty($posts) && $posts->count())
-        <div style="z-index: 9999" class="absolute -ml-4 mt-3 transform px-2 sm:px-0 lg:ml-0 lg:-left-1/2 lg:-translate-x-1/2">
+        <div class="z-20 absolute -ml-4 mt-3 transform px-2 sm:px-0 lg:ml-0 lg:-left-1/2 lg:-translate-x-1/2">
             <div class="rounded-lg shadow-lg">
                 <div class="rounded-lg shadow-xs overflow-hidden">
                     <div class="z-20 relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">

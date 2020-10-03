@@ -1,4 +1,4 @@
-<div x-data="{ open: false }">
+<div x-data="{ mobile_menu: false}">
     <div class="fixed md:relative inset-x-0 z-10">
         <div class="relative bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -16,7 +16,7 @@
 
                     <div class="-mr-2 -my-2 md:hidden">
 
-                        <button @click="open = true" type="button"
+                        <button @click="mobile_menu = true" type="button"
                                 class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                             <!-- Heroicon name: menu -->
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -31,12 +31,10 @@
                         @endforeach
                     </nav>
 
-
                     <div class="hidden md:flex items-center justify-end space-x-8 md:flex-1 lg:w-0">
-
                         <livewire:search/>
                         <span class="inline-flex rounded-md shadow-sm">
-                        <a href="#"
+                        <a href="javascript:void(0)"
                            class="whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
                           登陆
                         </a>
@@ -45,8 +43,8 @@
                 </div>
             </div>
         </div>
-        <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
-             style="z-index: 999;display: none" x-show="open">
+        <div class="absolute top-0 inset-x-0 p-2 transition z-30 transform origin-top-right md:hidden"
+             style="display: none" x-show="mobile_menu">
             <div class="rounded-lg shadow-lg">
                 <div class="rounded-lg shadow-xs bg-white divide-y-2 divide-gray-50">
                     <div class="pt-5 pb-6 px-5 space-y-6">
@@ -58,7 +56,7 @@
                                 </a>
                             </div>
                             <div class="-mr-2">
-                                <button @click="open = false" type="button"
+                                <button @click="mobile_menu = false" type="button"
                                         class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                                     <!-- Heroicon name: x -->
                                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -80,18 +78,11 @@
 
                         <div class="space-y-6">
                         <span class="w-full flex rounded-md shadow-sm">
-                            <a href="#"
+                            <a href="javascript:void(0)"
                                class="w-full flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
                                 登陆
                             </a>
                         </span>
-                            <p class="text-center text-base leading-6 font-medium text-gray-500">
-                                没有账号?
-                                <a href="#"
-                                   class="text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
-                                    注册
-                                </a>
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -99,6 +90,9 @@
         </div>
     </div>
 </div>
-{{--<livewire:login/>--}}
+
+
+
+
 
 
