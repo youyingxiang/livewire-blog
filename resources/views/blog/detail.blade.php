@@ -32,8 +32,8 @@
 
                     </div>
                 </article>
-                <livewire:add-comment :postId="$post->id" :parentId="0"/>
-                <livewire:show-comment :postId="$post->id"/>
+                <livewire:add-comment :postId="$post->id" :parentId="0" key="'add'.$post->id"/>
+                <livewire:show-comment :postId="$post->id" :parentId="0" :key="'show'.$post->id"/>
             </main>
 
         </div>

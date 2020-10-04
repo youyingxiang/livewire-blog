@@ -65,13 +65,23 @@ class BlogRepository
 
     /**
      * @param int $post_id
+     * @param int $parent_id
      * @return Collection
      */
-    public static function getCommensByPostId(int $post_id): Collection
+    public static function getCommensByPostId(int $post_id,int $parent_id): Collection
     {
-        return CommentModel::with('user')->where([
+        return CommentModel::with('user', 'replys')->where([
             'post_id'   => $post_id,
-            'parent_id' => 0,
+            'parent_id' => $parent_id,
         ])->orderBy('id', 'desc')->get();
+    }
+
+    /**
+     * @param int $comment_id
+     * @return Collection
+     */
+    public static function getReplysByCommentId(int $comment_id): Collection
+    {
+        return CommentModel::where('parent_id', $comment_id)->orderBy('id', 'desc')->get();
     }
 }

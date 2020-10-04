@@ -6,6 +6,7 @@ use App\Extensions\Parsedown;
 use App\Traits\Markdown;
 use GrahamCampbell\Security\Facades\Security;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * App\Models\CommentModel
@@ -57,5 +58,13 @@ class CommentModel extends BaseModel
     public function getContentStrAttribute(): string
     {
         return $this->toHtml($this->content);
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function replys(): HasMany
+    {
+        return $this->hasMany(CommentModel::class,'parent_id')->orderBy('id','desc');
     }
 }

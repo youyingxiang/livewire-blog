@@ -14,28 +14,42 @@ class ShowComment extends Component
      */
     public $postId;
     /**
+     * @var
+     */
+    public $parentId;
+    /**
      * @var Collection
      */
     public $comments;
-
+    /**
+     * @var int
+     */
+    public $comments_count = 0;
+    /**
+     * @var array
+     */
     protected $listeners = ['create' => 'getCommens'];
 
     /**
      * @param $postIds
      */
-    public function mount(int $postId): void
+    public function mount(int $postId, int $parentId): void
     {
-        $this->postId = $postId;
-        $this->getCommens();
+        $this->getCommens($postId, $parentId);
     }
 
     /**
      * $params
      */
-    public function getCommens(): void
+    public function getCommens(int $postId, int $parentId): void
     {
-        $this->comments = BlogRepository::getCommensByPostId($this->postId);
+        $this->postId   = $postId;
+        $this->parentId = $parentId;
+        $this->comments = BlogRepository::getCommensByPostId($postId, $parentId);
+        $this->comments_count = $this->comments->count();
     }
+
+
 
     /**
      * @return View
