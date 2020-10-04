@@ -1,5 +1,5 @@
 <li>
-    <div class="max-w-sm rounded overflow-hidden shadow-xl">
+    <div class="max-w-sm rounded overflow-hidden shadow-xl hover:scale-105 transition duration-300 ease-in-out transform">
         <img class="w-full h-64 px-6 py-8 flex-shrink-0" src="{{ Storage::url($post->hot_image) }}"
              alt="{{ $post->title }}">
         <div class="px-6 py-4">

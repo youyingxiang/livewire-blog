@@ -3,10 +3,12 @@
 namespace App\Repositories;
 
 use App\Models\CategoryModel;
+use App\Models\CommentModel;
 use App\Models\PostModel;
 use App\Models\TagModel;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 
 class BlogRepository
 {
@@ -59,5 +61,17 @@ class BlogRepository
     public function getTagById(int $tag_id): TagModel
     {
         return TagModel::find($tag_id);
+    }
+
+    /**
+     * @param int $post_id
+     * @return Collection
+     */
+    public static function getCommensByPostId(int $post_id): Collection
+    {
+        return CommentModel::with('user')->where([
+            'post_id'   => $post_id,
+            'parent_id' => 0,
+        ])->orderBy('id', 'desc')->get();
     }
 }

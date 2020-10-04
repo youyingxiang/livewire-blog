@@ -5,7 +5,6 @@ namespace App\Admin\Controllers;
 use App\Admin\Repositories\Comment;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
-use Dcat\Admin\Show;
 use Dcat\Admin\Controllers\AdminController;
 
 class CommentController extends AdminController
@@ -26,11 +25,6 @@ class CommentController extends AdminController
             $grid->column('content');
             $grid->column('created_at');
             $grid->column('updated_at')->sortable();
-        
-            $grid->filter(function (Grid\Filter $filter) {
-                $filter->equal('id');
-        
-            });
         });
     }
 

@@ -14462,6 +14462,42 @@
      
 }
 
+    namespace GrahamCampbell\Security\Facades { 
+            /**
+     * This is the security facade class.
+     *
+     * @author Graham Campbell <graham@alt-three.com>
+     */ 
+        class Security {
+                    /**
+         * Create a new security instance.
+         *
+         * @param array|null $evil
+         * @param string|null $replacement
+         * @return \GrahamCampbell\SecurityCore\Security 
+         * @static 
+         */ 
+        public static function create($evil = null, $replacement = null)
+        {
+                        return \GrahamCampbell\SecurityCore\Security::create($evil, $replacement);
+        }
+                    /**
+         * XSS clean.
+         *
+         * @param string|array $input
+         * @return string|array 
+         * @static 
+         */ 
+        public static function clean($input)
+        {
+                        /** @var \GrahamCampbell\SecurityCore\Security $instance */
+                        return $instance->clean($input);
+        }
+         
+    }
+     
+}
+
     namespace Facade\Ignition\Facades { 
             /**
      * Class Flare.
@@ -18558,6 +18594,7 @@ namespace  {
             class Validator extends \Illuminate\Support\Facades\Validator {}
             class View extends \Illuminate\Support\Facades\View {}
             class Socialite extends \Overtrue\LaravelSocialite\Socialite {}
+            class Security extends \GrahamCampbell\Security\Facades\Security {}
             class Flare extends \Facade\Ignition\Facades\Flare {}
             class Agent extends \Jenssegers\Agent\Facades\Agent {}
             class Livewire extends \Livewire\Livewire {}

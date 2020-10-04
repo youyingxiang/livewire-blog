@@ -31,16 +31,6 @@
     </script>
 @endsection
 @section('content')
-    <div>
-
-
-        <textarea id="oriContent" style="height:400px;width:600px;" onkeyup="convert()"></textarea>
-
-
-        <div id="result"></div>
-
-    </div>
-
     {{--<div x-data="{ open: false }">--}}
     {{--<button @click="open = true">展開下拉選單</button>--}}
 

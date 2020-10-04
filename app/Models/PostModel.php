@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Extensions\Parsedown;
+use App\Traits\Markdown;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -46,6 +47,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class PostModel extends BaseModel
 {
+    use Markdown;
     protected $table = 'post';
 
     const HOT_YES = 1;
@@ -76,7 +78,7 @@ class PostModel extends BaseModel
      */
     public function getContentStrAttribute(): string
     {
-        return Parsedown::instance()->parse($this->content);
+        return $this->toHtml($this->content);
     }
 
     /**
@@ -86,7 +88,7 @@ class PostModel extends BaseModel
     {
         return route('home.detail', ['id' => $this->id]);
     }
-    
+
 
     /**
      * @return BelongsTo

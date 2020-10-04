@@ -7,6 +7,27 @@ use Dcat\Admin\Traits\HasDateTimeFormatter;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * App\Models\SocialiteUserModel
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property int $driver
+ * @property string $open_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialiteUserModel newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialiteUserModel newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialiteUserModel query()
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialiteUserModel whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialiteUserModel whereDriver($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialiteUserModel whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialiteUserModel whereOpenId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialiteUserModel whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialiteUserModel whereUserId($value)
+ * @mixin \Eloquent
+ */
 class SocialiteUserModel extends Model
 {
     use HasDateTimeFormatter;
