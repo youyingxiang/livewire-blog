@@ -17,4 +17,5 @@ Route::group([
     $router->resource('categorys', 'CategoryController');
     $router->resource('partners', 'PartnerController');
     $router->resource('links', 'LinkController');
+    $router->resource('comments', 'CommentController');
 });
