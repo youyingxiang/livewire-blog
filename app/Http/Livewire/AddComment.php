@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use App\Models\CommentModel;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\View\View;

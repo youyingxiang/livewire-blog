@@ -13,9 +13,6 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
-        // margin: {
-        //      '30': '7rem',
-        // }
     },
 
     variants: {

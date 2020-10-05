@@ -6,17 +6,19 @@
         <div class="mt-2 flex flex-wrap justify-center divide-y divide-gray-200">
             <div class="w-2/12 sm:w-1/12  py-3 flex justify-start">
                 <img class="h-10 w-10 rounded"
-                     src="{{ $comment->user->profile_photo_path ?? '' }}">
+                     src="{{ $comment->user->image ?? '' }}">
 
             </div>
             <div class="w-10/12 sm:w-11/12 py-3">
                 <p class="prose rounded font-light text-base text-gray flex">
                     <span>{{ $comment->user->name ?? '' }}</span> <span class="mx-2"></span><span class="mr-2">{{ $comment->created_at->diffForHumans() }}
                         </span>
-                    <span class="ml-1 bg-gray-100 px-3 transition ease-in-out duration-150 hover:bg-indigo-500 hover:text-white leading-6 rounded-md text-gray-500 whitespace-no-wrap inline-flex text-sm items-center"
-                          @click="{{ $show_reply }} = !{{ $show_reply }}">
+                    @if(Auth::check())
+                        <span class="ml-1 bg-gray-100 px-3 transition ease-in-out duration-150 hover:bg-indigo-500 hover:text-white leading-6 rounded-md text-gray-500 whitespace-no-wrap inline-flex text-sm items-center"
+                              @click="{{ $show_reply }} = !{{ $show_reply }}">
                         回复
                     </span>
+                    @endif
                 </p>
                 <div class="prose rounded divide-y max-w-none divide-gray-200 mt-3 text-base text-gray-500">
                     {!! $comment->content_str !!}

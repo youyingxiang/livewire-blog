@@ -33,17 +33,25 @@
                 <div class="hidden md:flex items-center justify-end space-x-8 md:flex-1 lg:w-0">
                     <livewire:search/>
                     @if(Auth::check())
-                        <a href="{{ route('oauth.logout') }}"
+                        <a href="{{ route('profile.show') }}"
+                           class="whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:border-indigo-500 focus:outline-none focus:text-gray-900">
+                            <svg t="1601901616616" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3441" width="20" height="20"><path d="M608.188 557.902H434.715c-161.213 0-292.327 131.238-292.327 292.602v17.361c0 84.354 129.017 84.354 292.327 84.354h173.474c156.884 0 292.356 0 292.356-84.354v-17.361c0-161.333-131.148-292.602-292.357-292.602z m-95.403-22.333c127.658 0 231.524-104.015 231.524-231.894 0-127.873-103.866-231.895-231.524-231.895-127.654 0-231.53 104.044-231.53 231.9 0 127.846 103.876 231.889 231.53 231.889z m0 0" p-id="3442"></path></svg>
+                        </a>
+                        <a href="{{ route('logout') }}"
                            class="whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:border-indigo-700 focus:outline-none focus:text-gray-900">
                             注销
                         </a>
                     @else
-                        <span class="inline-flex rounded-md shadow-sm">
-                        <a @click="show_login = true" href="javascript:void(0)"
-                           class="whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
-                          登陆
+                        <a href="{{ route('register') }}"
+                           class="whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900">
+                            注册
                         </a>
-                    </span>
+                        <span class="inline-flex rounded-md shadow-sm">
+                          <a href="{{ route('login') }}"
+                             class="whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
+                            登陆
+                          </a>
+                        </span>
                     @endif
                 </div>
             </div>
@@ -90,12 +98,20 @@
                                 注销
                             </a>
                             @else
-                                 <a href="javascript:void(0)" @click="show_login = true"
+                                <a href="{{ route('login') }}"
                                    class="w-full flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
                                 登陆
                             </a>
+
                             @endif
                         </span>
+                        <p class="text-center text-base leading-6 font-medium text-gray-500">
+                            账户不存在?
+                            <a href="{{ route('register') }}"
+                               class="text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
+                                注册
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>

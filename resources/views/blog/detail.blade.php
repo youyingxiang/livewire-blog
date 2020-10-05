@@ -32,7 +32,13 @@
 
                     </div>
                 </article>
-                <livewire:add-comment :postId="$post->id" :parentId="0" key="'add'.$post->id"/>
+                @if(Auth::check())
+                    <livewire:add-comment :postId="$post->id" :parentId="0" key="'add'.$post->id"/>
+                @else
+                    <div class="xl:divide-y xl:divide-gray-200 shadow-lg mt-5 py-5 bg-white flex flex-wrap justify-center px-3 lg:px-5">
+                    <a class="hover:text-indigo-500" href="{{route('login')}}">登陆后方可评论！</a>
+                    </div>
+                @endif
                 <livewire:show-comment :postId="$post->id" :parentId="0" :key="'show'.$post->id"/>
             </main>
 
