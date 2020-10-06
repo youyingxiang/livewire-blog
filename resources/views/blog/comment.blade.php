@@ -31,7 +31,7 @@
             @php $key_add_comment = \Illuminate\Support\Str::random(10) @endphp
             <div style="display: none" x-show="{{ $show_reply }}">
                 <livewire:add-comment :postId="$postId"
-                                      :parentId="$comment->parent_id ? $comment->parent_id : $comment->id"
+                                      :comment="$comment"
                                       :key="$key_add_comment"/>
             </div>
             @include('blog.comment',['comments' => $comment->replys,'time' => $time + 1])

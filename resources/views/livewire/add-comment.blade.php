@@ -1,5 +1,5 @@
 <form wire:submit.prevent="submit">
-    <div class="xl:divide-y xl:divide-gray-200 @if($parentId === 0) shadow-lg mt-5 py-5 @endif bg-white flex flex-wrap justify-center px-3 lg:px-5">
+    <div class="xl:divide-y xl:divide-gray-200 @if($parent_id === 0) shadow-lg mt-5 py-5 @endif bg-white flex flex-wrap justify-center px-3 lg:px-5">
         <div class="w-2/12 sm:w-1/12 flex justify-start">
             <img class="h-10 w-10 rounded-full"
                  src="{{ user_img() }}">
@@ -7,8 +7,8 @@
         </div>
         <div class="w-10/12 sm:w-11/12">
             <div>
-                <textarea x-on:input="convert()" wire:model.defer="content" id="{{ $comment_composing_box_id }}"
-                          class="w-full  @if($parentId === 0) h-24 @else h-18 @endif resize-none focus:shadow-outline-indigo focus:text-indigo-600 leading-tight form-input"></textarea>
+                <textarea x-on:input="convert()"  wire:model.defer="content" id="{{ $comment_composing_box_id }}"
+                          class="w-full  @if($parent_id === 0) h-24 @else h-18 @endif resize-none focus:shadow-outline-indigo focus:text-indigo-600 leading-tight form-input"></textarea>
                 @error('content')
                 <div class="mt-3"><span
                             class="text-red-500">{{ $message }}</span></div>
@@ -25,7 +25,7 @@
                 @endif
                 <button type="submit"
                         class="whitespace-no-wrap inline-flex items-center justify-center px-3 border border-transparent text-sm leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
-                    @if($parentId === 0) 提交 @else 回复 @endif
+                    @if($parent_id === 0) 提交 @else 回复 @endif
                 </button>
 
             </div>

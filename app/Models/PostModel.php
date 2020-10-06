@@ -6,6 +6,7 @@ use App\Extensions\Parsedown;
 use App\Traits\Markdown;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * App\Models\PostModel.
@@ -96,6 +97,14 @@ class PostModel extends BaseModel
     public function category(): BelongsTo
     {
         return $this->belongsTo(CategoryModel::class);
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function comments(): HasMany
+    {
+        return $this->hasMany(CommentModel::class,'post_id');
     }
 
     /**

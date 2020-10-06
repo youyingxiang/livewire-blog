@@ -24,7 +24,6 @@ class BlogController extends Controller
     public function detail(int $id, BlogRepository $repository): View
     {
         $post = $repository->getPostById($id);
-
         return view('blog.detail', compact('post'));
     }
 

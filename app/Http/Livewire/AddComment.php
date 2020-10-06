@@ -17,19 +17,23 @@ class AddComment extends Component
     /**
      * @var int
      */
-    public $postId;
+    public $post_id;
     /**
      * @var int
      */
-    public $parentId;
+    public $parent_id;
     /**
      * @var string
      */
     public $comment_composing_box_id;
     /**
-     * @var
+     * @var string
      */
     public $preview_box_id;
+    /**
+     * @var string
+     */
+    public $target_id;
 
 
     /**
@@ -45,10 +49,12 @@ class AddComment extends Component
         'content.required' => '评论不能为空！',
     ];
 
-    public function mount(int $postId, int $parentId): void
+    public function mount(int $postId, CommentModel $comment): void
     {
-        $this->postId                   = $postId;
-        $this->parentId                 = $parentId;
+        $this->post_id                  = $postId;
+        $this->parent_id                = empty($comment->id) ? 0 : ($comment->parent_id ? $comment->parent_id : $comment->id);
+        $this->target_id                = empty($comment->id) ? 0 : $comment->id;
+        $this->content                  = empty($comment->user) ? '' : "@" . $comment->user->name . "：";
         $this->comment_composing_box_id = 'comment-composing-box-' . Str::random(10);
         $this->preview_box_id           = 'preview-box' . Str::random(10);
     }
@@ -63,19 +69,21 @@ class AddComment extends Component
             $data          = [
                 'content'   => $validatedData['content'],
                 'user_id'   => Auth::user()->id,
-                'parent_id' => $this->parentId,
-                'post_id'   => $this->postId,
+                'parent_id' => $this->parent_id,
+                'post_id'   => $this->post_id,
+                'target_id' => $this->target_id
             ];
 
             CommentModel::create($data);
 
             $this->reset('content');
 
-            $this->emitTo('show-comment', 'create', $this->postId, 0);
+            $this->emitTo('show-comment', 'create', $this->post_id, 0);
 
             session()->flash('message', '添加评论成功！');
         }
     }
+    
 
     /**
      * @return View
