@@ -20,11 +20,13 @@ class OauthService
                 $socialiteUser          = SocialiteUserModel::newModelInstance();
                 $socialiteUser->driver  = config('socialite.github.flag', 0);
                 $socialiteUser->open_id = $user->id;
-                $finder                 = $socialiteUser->user()->create([
-                    'name'               => $user->username,
-                    'email'              => $user->email,
-                    'profile_photo_path' => $user->avatar,
-                ]);
+                $finder                 = $socialiteUser->user()->firstOrCreate(
+                    ['email' => $user->email],
+                    [
+                        'name'               => $user->username,
+                        'profile_photo_path' => $user->avatar,
+                    ]
+                );
                 $socialiteUser->user_id = $finder->id;
                 $socialiteUser->save();
                 return $finder;
