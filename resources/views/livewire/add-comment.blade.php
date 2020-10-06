@@ -1,7 +1,7 @@
 <form wire:submit.prevent="submit">
     <div class="xl:divide-y xl:divide-gray-200 @if($parentId === 0) shadow-lg mt-5 py-5 @endif bg-white flex flex-wrap justify-center px-3 lg:px-5">
         <div class="w-2/12 sm:w-1/12 flex justify-start">
-            <img class="h-10 w-10 rounded "
+            <img class="h-10 w-10 rounded-full"
                  src="{{ user_img() }}">
 
         </div>
@@ -24,7 +24,7 @@
                     </div>
                 @endif
                 <button type="submit"
-                        class="whitespace-no-wrap inline-flex items-center justify-center px-3 py-1 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
+                        class="whitespace-no-wrap inline-flex items-center justify-center px-3 border border-transparent text-sm leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
                     @if($parentId === 0) 提交 @else 回复 @endif
                 </button>
 

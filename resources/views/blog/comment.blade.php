@@ -5,7 +5,7 @@
     <div x-data="{ {{ $show_reply }}:false}">
         <div class="mt-2 flex flex-wrap justify-center divide-y divide-gray-200">
             <div class="w-2/12 sm:w-1/12  py-3 flex justify-start">
-                <img class="h-10 w-10 rounded"
+                <img class="h-10 w-10 rounded-full"
                      src="{{ $comment->user->image ?? '' }}">
 
             </div>
