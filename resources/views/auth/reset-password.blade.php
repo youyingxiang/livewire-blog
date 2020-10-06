@@ -1,9 +1,13 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
-
+@extends('blog.layout')
+@section('content')
+    <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+        <div class="text-center my-3">
+            <h1 class="text-xl leading-9 font-light text-gray-900 tracking-tight px-2 sm:leading-10 md:leading-14">
+                重设密码</h1>
+        </div>
+    </div>
+    <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 mb-15">
+        <div class="w-full sm:max-w-md px-6 py-6 bg-white shadow-md overflow-hidden sm:rounded-lg">
         <x-jet-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('password.update') }}">
@@ -32,5 +36,6 @@
                 </x-jet-button>
             </div>
         </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+        </div>
+    </div>
+@endsection

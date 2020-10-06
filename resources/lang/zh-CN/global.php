@@ -33,5 +33,5 @@ return [
     'options' => [
         //
     ],
-    'Forgot your password' => '忘记密码'
+    'Forgot your password' => '忘记密码',
 ];

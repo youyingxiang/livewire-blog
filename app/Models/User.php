@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Jobs\SendResetPasswordEmailJob;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -75,4 +75,10 @@ class User extends Authenticatable
             return "https://ui-avatars.com/api/?name=" . $this->name . "color=7F9CF5&background=EBF4FF";
         }
     }
+
+    public function sendPasswordResetNotification($token): void
+    {
+        SendResetPasswordEmailJob::dispatch($this, $token)->onQueue(config('queue.queue_name.low'));
+    }
+
 }

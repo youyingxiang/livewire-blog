@@ -64,6 +64,7 @@ return [
             'connection' => 'default',
             'queue' => env('REDIS_QUEUE', 'default'),
             'retry_after' => 90,
+            'expire' => 300,
             'block_for' => null,
         ],
 
@@ -84,6 +85,12 @@ return [
         'driver' => env('QUEUE_FAILED_DRIVER', 'database-uuids'),
         'database' => env('DB_CONNECTION', 'mysql'),
         'table' => 'failed_jobs',
+    ],
+
+    'queue_name' => [
+        'default' => env('QUEUE_NAME', 'default'),   // 默认队列
+        'high' => env('QUEUE_NAME_HIGH', 'high'),   // 优先队列，如：订单类消息
+        'low' => env('QUEUE_NAME_LOW', 'low'),  // 慢队列，如：直播预约提醒，微信推送、统计类消息
     ],
 
 ];
