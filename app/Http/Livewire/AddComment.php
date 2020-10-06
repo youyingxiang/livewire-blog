@@ -30,6 +30,8 @@ class AddComment extends Component
      * @var
      */
     public $preview_box_id;
+
+
     /**
      * @var array
      */
@@ -53,22 +55,26 @@ class AddComment extends Component
 
     public function submit(): void
     {
-        $validatedData = $this->validate();
-        $data          = [
-            'content'   => $validatedData['content'],
-            'user_id'   => Auth::user()->id,
-            'parent_id' => $this->parentId,
-            'post_id'   => $this->postId,
-        ];
+        if (Auth::guest()) {
+            $errors = $this->getErrorBag();
+            $errors->add('content', '用户需要登陆！');
+        } else {
+            $validatedData = $this->validate();
+            $data          = [
+                'content'   => $validatedData['content'],
+                'user_id'   => Auth::user()->id,
+                'parent_id' => $this->parentId,
+                'post_id'   => $this->postId,
+            ];
 
-        CommentModel::create($data);
+            CommentModel::create($data);
 
-        $this->reset('content');
+            $this->reset('content');
 
-        $this->emitTo('showComment', 'create', $this->postId, 0);
-//        $this->emitSelf('create',$this->postId, 0);
+            $this->emitTo('show-comment', 'create', $this->postId, 0);
 
-        session()->flash('message', '添加评论成功！');
+            session()->flash('message', '添加评论成功！');
+        }
     }
 
     /**

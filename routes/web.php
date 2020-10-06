@@ -33,11 +33,10 @@ Route::group([], function (Router $router) {
 
     $router->get('/test', [\App\Http\Controllers\BlogController::class, 'test']);
 });
-
-Route::get('home',function (){
-    return view('welcome');
-});
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+//Route::get('home',function (){
+//    return view('welcome');
+//});
+//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//    return view('dashboard');
+//})->name('dashboard');
 
