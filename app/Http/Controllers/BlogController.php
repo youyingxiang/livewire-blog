@@ -24,7 +24,9 @@ class BlogController extends Controller
     public function detail(int $id, BlogRepository $repository): View
     {
         $post = $repository->getPostById($id);
-        return view('blog.detail', compact('post'));
+        $prev = $post->where('id', '<', $id)->orderBy('id', 'desc')->first(['id', 'title']);
+        $next = $post->where('id', '>', $id)->orderBy('id', 'asc')->first(['id', 'title']);
+        return view('blog.detail', compact('post', 'prev', 'next'));
     }
 
     /**

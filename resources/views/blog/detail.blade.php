@@ -29,14 +29,36 @@
                                 {!! $post->content_str !!}
                             </div>
                         </div>
-
                     </div>
+                    <div class="py-5 px-5">
+                        @if($prev)
+                            <a href="{{ route('home.detail',['id' => $prev->id]) }}"
+                               class="my-4 ml-1 flex items-start space-x-4 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
+                                <div class="space-y-1">
+                                    <p class="font-medium text-base text-gray-500 underline hover:text-indigo-600">
+                                        上一篇：{{ $prev->title }}
+                                    </p>
+                                </div>
+                            </a>
+                        @endif
+                        @if($next)
+                            <a href="{{ route('home.detail',['id' => $next->id]) }}"
+                               class="my-4 ml-1 flex items-start space-x-4 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
+                                <div class="space-y-1">
+                                    <p class="font-medium text-base text-gray-500 underline hover:text-indigo-600">
+                                        下一篇：{{ $next->title }}
+                                    </p>
+                                </div>
+                            </a>
+                        @endif
+                    </div>
+
                 </article>
                 @if(Auth::check())
                     <livewire:add-comment :postId="$post->id" key="'add'.$post->id"/>
                 @else
                     <div class="xl:divide-y xl:divide-gray-200 shadow-lg mt-5 py-5 bg-white flex flex-wrap justify-center px-3 lg:px-5">
-                    <a class="hover:text-indigo-500" href="{{route('login')}}">登陆后方可评论！</a>
+                        <a class="hover:text-indigo-500" href="{{route('login')}}">登陆后方可评论！</a>
                     </div>
                 @endif
                 <livewire:show-comment :post="$post" :key="'show'.$post->id"/>
