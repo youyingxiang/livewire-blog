@@ -21,6 +21,7 @@ class BlogRepository
     {
         return PostModel::with(['comments' => function(HasMany $hasMany){
             $hasMany->where('parent_id',0);
+            $hasMany->orderBy('id','desc');
         }])->findOrFail($id);
     }
 
