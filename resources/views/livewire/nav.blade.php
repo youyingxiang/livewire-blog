@@ -41,10 +41,18 @@
                                       p-id="3442"></path>
                             </svg>
                         </a>
-                        <a href="{{ route('logout') }}"
-                           class="whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:border-indigo-700 focus:outline-none focus:text-gray-900">
-                            注销
-                        </a>
+
+                        <span class="whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:border-indigo-700 focus:outline-none focus:text-gray-900">
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+
+                                <x-jet-dropdown-link href="{{ route('logout') }}"
+                                                     onclick="event.preventDefault();
+                                                                this.closest('form').submit();">
+                                    {{ __('Logout') }}
+                                </x-jet-dropdown-link>
+                            </form>
+                         </span>
                     @else
                         <a href="{{ route('register') }}"
                            class="whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900">
@@ -103,12 +111,16 @@
                             个人信息
                         </a>
                         </span>
-                            <span class="w-full flex rounded-md shadow-sm">
-                                <a href="{{ route('oauth.logout') }}"
-                                   class="w-full flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-500 bg-gray-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
-                                注销
-                            </a>
-                            </span>
+
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a class="w-full flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
+                                   href="{{ route('logout') }}
+                                           "
+                                   onclick="event.preventDefault();
+                                                                this.closest('form').submit();">
+                                    {{ __('Logout') }}</a>
+                            </form>
                         @else
                             <span class="w-full flex rounded-md shadow-sm">
                                 <a href="{{ route('login') }}"
