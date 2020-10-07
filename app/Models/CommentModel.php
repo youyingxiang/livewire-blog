@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-use App\Extensions\Parsedown;
 use App\Traits\Markdown;
-use GrahamCampbell\Security\Facades\Security;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Notifications\RoutesNotifications;
 
 /**
  * App\Models\CommentModel
@@ -38,7 +37,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class CommentModel extends BaseModel
 {
-    use Markdown;
+    use Markdown,RoutesNotifications;
 
     protected $table = 'comment';
 

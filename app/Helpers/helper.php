@@ -28,3 +28,12 @@ if (!function_exists('user_img')) {
         return $src;
     }
 }
+
+if (!function_exists('user_comment_time_key')) {
+
+    function user_comment_time_key(): string
+    {
+        return config('cache.user_comment_limit.cache_key') . '_' . Auth::id();
+    }
+}
+

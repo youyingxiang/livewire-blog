@@ -49,12 +49,12 @@ class AddComment extends Component
         'content.required' => '评论不能为空！',
     ];
 
-    public function mount(int $postId, CommentModel $comment): void
+    public function mount(int $postId, CommentModel $comment,int $time = 0): void
     {
         $this->post_id                  = $postId;
         $this->parent_id                = empty($comment->id) ? 0 : ($comment->parent_id ? $comment->parent_id : $comment->id);
         $this->target_id                = empty($comment->id) ? 0 : $comment->id;
-        $this->content                  = empty($comment->user) ? '' : "@" . $comment->user->name . "：";
+        $this->content                  = ($time > 0) ? "@" . $comment->user->name . "：" : '';
         $this->comment_composing_box_id = 'comment-composing-box-' . Str::random(10);
         $this->preview_box_id           = 'preview-box' . Str::random(10);
     }
