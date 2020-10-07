@@ -44,6 +44,9 @@ class CommentModel extends BaseModel
 
     public $guarded = ['id'];
 
+    protected $with = ['user','replys'];
+
+
     /**
      * @return BelongsTo
      */

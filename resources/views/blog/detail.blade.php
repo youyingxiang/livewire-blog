@@ -39,7 +39,7 @@
                     <a class="hover:text-indigo-500" href="{{route('login')}}">登陆后方可评论！</a>
                     </div>
                 @endif
-                <livewire:show-comment :postId="$post->id" :parentId="0" :key="'show'.$post->id"/>
+                <livewire:show-comment :post="$post" :key="'show'.$post->id"/>
             </main>
 
         </div>

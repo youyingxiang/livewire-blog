@@ -7,6 +7,7 @@ use App\Models\CommentModel;
 use App\Models\PostModel;
 use App\Models\TagModel;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
@@ -16,9 +17,11 @@ class BlogRepository
      * @param int $id
      * @return PostModel
      */
-    public function getPostById(int $id): PostModel
+    public static function getPostById(int $id): PostModel
     {
-        return PostModel::findOrFail($id);
+        return PostModel::with(['comments' => function(HasMany $hasMany){
+            $hasMany->where('parent_id',0);
+        }])->findOrFail($id);
     }
 
     /**
@@ -70,7 +73,7 @@ class BlogRepository
      */
     public static function getCommensByPostId(int $post_id,int $parent_id): Collection
     {
-        return CommentModel::with('user', 'replys')->where([
+        return CommentModel::where([
             'post_id'   => $post_id,
             'parent_id' => $parent_id,
         ])->orderBy('id', 'desc')->get();

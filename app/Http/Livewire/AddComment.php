@@ -78,12 +78,12 @@ class AddComment extends Component
 
             $this->reset('content');
 
-            $this->emitTo('show-comment', 'create', $this->post_id, 0);
+            $this->emitTo('show-comment', 'create', $this->post_id);
 
             session()->flash('message', '添加评论成功！');
         }
     }
-    
+
 
     /**
      * @return View

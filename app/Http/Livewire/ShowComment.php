@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\PostModel;
 use App\Repositories\BlogRepository;
 use Illuminate\Support\Collection;
 use Illuminate\View\View;
@@ -13,10 +14,6 @@ class ShowComment extends Component
      * @var int
      */
     public $postId;
-    /**
-     * @var
-     */
-    public $parentId;
     /**
      * @var Collection
      */
@@ -33,20 +30,21 @@ class ShowComment extends Component
     /**
      * @param $postIds
      */
-    public function mount(int $postId, int $parentId): void
+    public function mount(PostModel $post): void
     {
-        $this->getCommens($postId, $parentId);
+        $this->postId = $post->id;
+        $this->comments = $post->comments;
+        $this->comments_count = $post->comments->count() ?? 0;
     }
 
     /**
      * $params
      */
-    public function getCommens(int $postId, int $parentId): void
+    public function getCommens(int $postId): void
     {
-        $this->postId   = $postId;
-        $this->parentId = $parentId;
-        $this->comments = BlogRepository::getCommensByPostId($postId, $parentId);
-        $this->comments_count = $this->comments->count();
+        $post = BlogRepository::getPostById($postId);
+        $this->comments = $post->comments;
+        $this->comments_count = $post->comments->count() ?? 0;
     }
 
 
