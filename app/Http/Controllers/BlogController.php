@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\BlogRepository;
-use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\View\View;
 
 class BlogController extends Controller
