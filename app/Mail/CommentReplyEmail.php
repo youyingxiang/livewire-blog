@@ -34,7 +34,7 @@ class CommentReplyEmail extends Mailable
      */
     public function build()
     {
-        $url     = route('home.detail', $this->comment->post_id) . "#comment" . $this->comment->id;
+        $url     = route('home.detail', $this->comment->post_id) . "#comment-" . $this->comment->id;
         $subject = ($this->comment->user->name ?? '') . ' 回复 ' . $this->comment->post->title;
         return $this->subject($subject)->markdown('emails.comment.reply', compact('url'))->onQueue(config('queue.queue_name.low'));
     }
