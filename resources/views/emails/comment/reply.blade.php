@@ -1,6 +1,6 @@
 @component('mail::message')
-    # {!!  $comment->target->content_str ?? $comment->post->title !!}:
-    {!! $comment->content_str !!}
+    {{ $comment->target->content_str ?? $comment->post->title }}:
+    {{ $comment->content_str }}
 
     @component('mail::button', ['url' => $url])
         点击查看详情
