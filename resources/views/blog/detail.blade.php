@@ -1,4 +1,13 @@
 @extends('blog.layout',['title'=> $post->title,'desc' => $post->introduce])
+@section('css')
+    <link rel="stylesheet" href="{{ asset('plugs/highlight/styles/monokai-sublime.css') }}">
+@endsection
+@section('js')
+    <script src="{{ asset('plugs/highlight/highlight.pack.js')  }}"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+@endsection
 @section('content')
     <div class="block md:flex break-all">
         <div class="md:w-3/4">
