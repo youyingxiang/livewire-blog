@@ -66,6 +66,10 @@ task('artisan:route:cache', function () {
 task('artisan:view:cache', function () {
     return true;
 });
+task('artisan:queue:restart', function () {
+    return true;
+});
+
 task('opcache:reload', function () {
     cd('{{release_path}}');
     // run('{{bin/php}} artisan optimize && {{bin/composer}} dump-autoload --optimize && {{bin/php}} artisan config:clear');
