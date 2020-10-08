@@ -43,6 +43,8 @@ class CommentModel extends BaseModel
 
     public $guarded = ['id'];
 
+    protected $appends = ['content_str'];
+
     protected $with = ['user', 'replys'];
 
 

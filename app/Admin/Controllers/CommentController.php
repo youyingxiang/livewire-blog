@@ -16,15 +16,14 @@ class CommentController extends AdminController
      */
     protected function grid()
     {
-        return Grid::make(new Comment(), function (Grid $grid) {
-            $grid->column('id')->sortable();
-            $grid->column('post_id');
-            $grid->column('parent_id');
-            $grid->column('target_id');
-            $grid->column('user_id');
-            $grid->column('content');
+        return Grid::make(new Comment(['post','target']), function (Grid $grid) {
+            $grid->column('post.title','文章标题');
+            $grid->column('user.name','用户');
+            $grid->column('content_str','回复内容')->display(function ($val){
+                return $val;
+            });
             $grid->column('created_at');
-            $grid->column('updated_at')->sortable();
+            $grid->disableActions();
         });
     }
 
