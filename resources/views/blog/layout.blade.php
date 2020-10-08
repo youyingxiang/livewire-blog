@@ -31,7 +31,9 @@
         @yield('content')
     </div>
 </div>
-<livewire:footer/>
+@if(empty($hidden_footer))
+    <livewire:footer/>
+@endif
 @livewireScripts
 </body>
 @yield('js')
