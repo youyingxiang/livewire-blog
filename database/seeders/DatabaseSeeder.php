@@ -223,6 +223,14 @@ class DatabaseSeeder extends Seeder
                 'uri'           => 'links',
                 'created_at'    => $createdAt,
             ],
+            [
+                'parent_id'     => 8,
+                'order'         => 14,
+                'title'         => '评论管理',
+                'icon'          => '',
+                'uri'           => 'comments',
+                'created_at'    => $createdAt,
+            ],
         ]);
 
         (new Menu())->flushCache();
