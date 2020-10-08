@@ -29,11 +29,11 @@ if (!function_exists('user_img')) {
     }
 }
 
-if (!function_exists('user_comment_time_key')) {
+if (!function_exists('user_comment_limit_key')) {
 
-    function user_comment_time_key(): string
+    function user_comment_limit_key(): string
     {
-        return config('cache.user_comment_limit.cache_key') . '_' . Auth::id();
+        return config('cache.user_comment_limit.cache_key') . 'u:' . Auth::id();
     }
 }
 

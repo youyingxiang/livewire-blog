@@ -37,13 +37,13 @@ use Illuminate\Notifications\RoutesNotifications;
  */
 class CommentModel extends BaseModel
 {
-    use Markdown,RoutesNotifications;
+    use Markdown, RoutesNotifications;
 
     protected $table = 'comment';
 
     public $guarded = ['id'];
 
-    protected $with = ['user','replys'];
+    protected $with = ['user', 'replys'];
 
 
     /**
@@ -67,6 +67,22 @@ class CommentModel extends BaseModel
      */
     public function replys(): HasMany
     {
-        return $this->hasMany(CommentModel::class,'parent_id')->orderBy('id','desc');
+        return $this->hasMany(CommentModel::class, 'parent_id')->orderBy('id', 'desc');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function post(): BelongsTo
+    {
+        return $this->belongsTo(PostModel::class, 'post_id');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function target(): BelongsTo
+    {
+        return $this->belongsTo(CommentModel::class, 'target_id');
     }
 }

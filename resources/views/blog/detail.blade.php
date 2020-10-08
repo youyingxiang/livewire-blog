@@ -33,9 +33,9 @@
                     <div class="py-5 px-5">
                         @if($prev)
                             <a href="{{ route('home.detail',['id' => $prev->id]) }}"
-                               class="my-4 ml-1 flex items-start space-x-4 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
+                               class="my-5 ml-1 flex items-start space-x-4 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                                 <div class="space-y-1">
-                                    <p class="font-medium text-base text-gray-500 underline hover:text-indigo-600">
+                                    <p class="font-normal text-base text-indigo-700 hover:underline hover:text-indigo-900">
                                         上一篇：{{ $prev->title }}
                                     </p>
                                 </div>
@@ -43,9 +43,9 @@
                         @endif
                         @if($next)
                             <a href="{{ route('home.detail',['id' => $next->id]) }}"
-                               class="my-4 ml-1 flex items-start space-x-4 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
+                               class="my-5 ml-1 flex items-start space-x-4 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                                 <div class="space-y-1">
-                                    <p class="font-medium text-base text-gray-500 underline hover:text-indigo-600">
+                                    <p class="font-normal text-base text-indigo-700 hover:underline hover:text-indigo-900">
                                         下一篇：{{ $next->title }}
                                     </p>
                                 </div>

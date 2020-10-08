@@ -78,7 +78,7 @@ class User extends Authenticatable
 
     public function sendPasswordResetNotification($token): void
     {
-        SendResetPasswordEmailJob::dispatch($this, $token)->onQueue(config('queue.queue_name.low'));
+        SendResetPasswordEmailJob::dispatch($this, $token)->onQueue(config('queue.queue_name.high'));
     }
 
 }

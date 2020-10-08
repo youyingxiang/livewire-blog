@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\BlogRepository;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class BlogController extends Controller
@@ -47,6 +46,9 @@ class BlogController extends Controller
         return view('blog.tag', compact('tag'));
     }
 
+    /**
+     * @return View
+     */
     public function test(): View
     {
         return view('blog.test');

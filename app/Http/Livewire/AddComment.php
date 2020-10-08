@@ -3,7 +3,10 @@
 namespace App\Http\Livewire;
 
 use App\Models\CommentModel;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\MessageBag;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
 use Livewire\Component;
@@ -49,7 +52,7 @@ class AddComment extends Component
         'content.required' => '评论不能为空！',
     ];
 
-    public function mount(int $postId, CommentModel $comment,int $time = 0): void
+    public function mount(int $postId, CommentModel $comment, int $time = 0): void
     {
         $this->post_id                  = $postId;
         $this->parent_id                = empty($comment->id) ? 0 : ($comment->parent_id ? $comment->parent_id : $comment->id);
@@ -61,10 +64,7 @@ class AddComment extends Component
 
     public function submit(): void
     {
-        if (Auth::guest()) {
-            $errors = $this->getErrorBag();
-            $errors->add('content', '用户需要登陆！');
-        } else {
+        if ($this->check()) {
             $validatedData = $this->validate();
             $data          = [
                 'content'   => $validatedData['content'],
@@ -82,6 +82,37 @@ class AddComment extends Component
 
             session()->flash('message', '添加评论成功！');
         }
+    }
+
+    public function userCommentLimit(MessageBag &$messageBag): void
+    {
+        $time           = Cache::get(user_comment_limit_key()) ?? 0;
+        $limit_day_time = config('cache.user_comment_limit.day_time', 10);
+
+        if ($limit_day_time < $time) {
+            $messageBag->add('content', Str::replaceFirst('?', $limit_day_time, '用户每天最多只能回复 ? 评论'));
+        } else {
+            Cache::put(user_comment_limit_key(), $time + 1, Carbon::today()->addDay());
+        }
+    }
+
+    /**
+     * @param MessageBag $messageBag
+     */
+    public function mustLogin(MessageBag &$messageBag): void
+    {
+        Auth::guest() && $messageBag->add('content', '用户需要登陆！');
+    }
+
+    /**
+     * @return bool
+     */
+    public function check(): Bool
+    {
+        $messageBag = $this->getErrorBag();
+        $this->userCommentLimit($messageBag);
+        $this->mustLogin($messageBag);
+        return $messageBag->count() === 0;
     }
 
 

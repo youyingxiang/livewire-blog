@@ -102,7 +102,7 @@ return [
     'prefix' => env('CACHE_PREFIX', 'cache'),
 
     'user_comment_limit' => [
-        'ttl'      => 1,
-        'cache_key' => 'comment_limit'
+        'day_time'  => 10,
+        'cache_key' => 'comment_time:'
     ],
 ];

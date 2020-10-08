@@ -5,7 +5,7 @@
             <br>
             <span class="text-indigo-600">请联系我</span>
         </h2>
-        <div class="mt-8 flex lg:flex-shrink-0 lg:mt-0">
+        <div class="mt-8 flex lg:flex-shrink-0 lg:mt-0 justify-end">
             <div class="inline-flex rounded-md shadow">
                 <a href="mailto:1365831278@qq.com" target="_blank"
                    class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
