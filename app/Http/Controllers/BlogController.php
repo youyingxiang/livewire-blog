@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\BlogRepository;
+use Illuminate\Database\Query\Builder;
 use Illuminate\View\View;
 
 class BlogController extends Controller
@@ -23,8 +24,17 @@ class BlogController extends Controller
     public function detail(int $id, BlogRepository $repository): View
     {
         $post = $repository->getPostById($id);
-        $prev = $post->where('id', '>', $id)->orderBy('id', 'asc')->first(['id', 'title']);
-        $next = $post->where('id', '<', $id)->orderBy('id', 'desc')->first(['id', 'title']);
+        $prev = $post->where(function (Builder $builder) use ($id, $post) {
+            $builder->where('category', $post->category_id);
+            $builder->where('id', '>', $id);
+
+
+        })->orderBy('id', 'asc')->first(['id', 'title']);
+        $next = $post->where(function (Builder $builder) use ($id, $post) {
+            $builder->where('category', $post->category_id);
+            $builder->where('id', '<', $id);
+
+        })->orderBy('id', 'desc')->first(['id', 'title']);
         return view('blog.detail', compact('post', 'prev', 'next'));
     }
 
