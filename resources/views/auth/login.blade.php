@@ -1,13 +1,13 @@
 @extends('blog.layout',['hidden_footer' => true])
 @section('content')
-    <div class="lg:mt-16">
-        <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+    <div class="lg:mt-10">
+        <div class="flex flex-col sm:justify-center items-center bg-gray-100">
             <div class="text-center my-3">
                 <h1 class="text-xl leading-9 font-light text-gray-900 tracking-tight px-2 sm:leading-10 md:leading-14">
                     用户登陆</h1>
             </div>
         </div>
-        <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+        <div class="flex flex-col sm:justify-center items-center bg-gray-100">
             <div class="w-full sm:max-w-md px-6 py-6 bg-white shadow-md overflow-hidden sm:rounded-lg">
                 <div class="text-center my-3">
                     <label class="text-base leading-9 text-gray-900 tracking-tight px-2 sm:leading-10 md:leading-14">欢迎回来，请登录您的账号。</label>
