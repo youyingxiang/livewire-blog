@@ -1,5 +1,5 @@
 <form wire:submit.prevent="submit">
-    <div class="xl:divide-y xl:divide-gray-200 @if($parent_id === 0) shadow-lg mt-5 py-5 @endif bg-white flex flex-wrap justify-center px-3 lg:px-5">
+    <div class="@if($parent_id === 0) shadow-lg mt-5 py-5 @endif bg-white flex flex-wrap justify-center px-3 lg:px-5">
         <div class="w-2/12 sm:w-1/12 flex justify-start">
             <img class="h-10 w-10 rounded-full"
                  src="{{ user_img() }}">
