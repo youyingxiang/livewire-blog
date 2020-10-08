@@ -36,5 +36,14 @@
 @endif
 @livewireScripts
 </body>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?911cd34390e03fb45567e521bff89398";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 @yield('js')
 </html>

@@ -51,7 +51,7 @@ class PostController extends AdminController
             $form->markdown('content')->languageUrl(admin_asset('@admin/dcat/plugins/editor-md/languages/zh-tw.js'))->required();
             $form->multipleSelect('tag', '标签')->options(TagModel::OrderBy('id', 'desc')->pluck('name', 'id'))->customFormat(function (array $v) {
                 return array_column($v, 'id');
-            });
+            })->required();
 
             $form->select('is_hot')->options(PostModel::HOT)->when(PostModel::HOT_YES, function (Form $form) {
                 $form->image('hot_image')->autoUpload()->uniqueName()->default(asset("images/default-post.png"))->saveAsString();
