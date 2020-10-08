@@ -27,7 +27,7 @@ class PostController extends AdminController
             $grid->column('tag_str', '标签');
             $grid->column('is_hot')->using(PostModel::HOT)->label(PostModel::HOT_COLOR);
             $grid->column('hot_image')->image('', 50, 50)->emp();
-            $grid->column('view', '浏览数');
+//            $grid->column('view', '浏览数');
             $grid->column('created_at');
             $grid->createMode(Grid::CREATE_MODE_DEFAULT);
             $grid->showQuickEditButton(false);
@@ -56,7 +56,7 @@ class PostController extends AdminController
             $form->select('is_hot')->options(PostModel::HOT)->when(PostModel::HOT_YES, function (Form $form) {
                 $form->image('hot_image')->autoUpload()->uniqueName()->default(asset("images/default-post.png"))->saveAsString();
             })->default(0)->required();
-            $form->number('view', '浏览数量')->default(0)->required();
+//            $form->number('view', '浏览数量')->default(0)->required();
         });
     }
 }

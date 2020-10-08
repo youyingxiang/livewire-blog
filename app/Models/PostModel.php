@@ -7,6 +7,7 @@ use App\Traits\Markdown;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * App\Models\PostModel.
@@ -113,5 +114,13 @@ class PostModel extends BaseModel
     public function tag(): BelongsToMany
     {
         return $this->belongsToMany(TagModel::class, PostTagModel::class, 'post_id', 'tag_id');
+    }
+
+    /**
+     * @return string
+     */
+    public function getHotImageUrlAttribute(): string
+    {
+        return url()->isValidUrl($this->hot_image) ? $this->hot_image :  Storage::disk(config('admin.upload.disk'))->url($this->hot_image);
     }
 }

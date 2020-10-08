@@ -36,7 +36,7 @@ class BlogRepository
 
         return PostModel::where(function (Builder $builder) use ($category) {
             $category && $builder->where('category_id', $category->id);
-        })->paginate($limit);
+        })->latest()->paginate($limit);
     }
 
     /**
