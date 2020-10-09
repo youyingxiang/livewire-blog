@@ -49,14 +49,16 @@ class PostController extends AdminController
             $form->select('category_id')->options(CategoryModel::orderBy('id', 'desc')->pluck('name', 'id'))->required();
             $form->textarea('introduce', '简介')->required()->saveAsString();
             $form->markdown('content')->languageUrl(admin_asset('@admin/dcat/plugins/editor-md/languages/zh-tw.js'))->required();
-            $form->multipleSelect('tag', '标签')->options(TagModel::OrderBy('id', 'desc')->pluck('name', 'id'))->customFormat(function (array $v) {
-                return array_column($v, 'id');
-            })->required();
-
+            $form->tags('tag', '标签')->pluck('name', 'id')->options(TagModel::OrderBy('id', 'desc')->pluck('name', 'id'))->saving(function ($value) {
+                $name_arr = explode(',', $value);
+                return array_map(function ($val) {
+                    $tag = TagModel::firstOrCreate(['name' => trim($val)]);
+                    return $tag->id;
+                }, $name_arr);
+            });
             $form->select('is_hot')->options(PostModel::HOT)->when(PostModel::HOT_YES, function (Form $form) {
                 $form->image('hot_image')->autoUpload()->uniqueName()->default(asset("images/default-post.png"))->saveAsString();
             })->default(0)->required();
-//            $form->number('view', '浏览数量')->default(0)->required();
         });
     }
 }

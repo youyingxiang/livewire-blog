@@ -29,6 +29,8 @@ class TagModel extends BaseModel
 {
     protected $table = 'tag';
 
+    protected $guarded = ['id'];
+
     /**
      * @return BelongsToMany
      */
