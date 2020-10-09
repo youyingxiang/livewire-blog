@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Repositories\BlogRepository;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class BlogController extends Controller
@@ -52,6 +54,16 @@ class BlogController extends Controller
     public function tag(string $tag): View
     {
         return view('blog.tag', compact('tag'));
+    }
+
+    /**
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function toLogin(Request $request): RedirectResponse
+    {
+        session()->put('url.intended', $request->server('HTTP_REFERER'));
+        return redirect(route('login'));
     }
 
     /**
