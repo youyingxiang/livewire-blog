@@ -2,7 +2,7 @@
 <p align="center"><code>Livewire-Blog</code>是一个基于<a href="https://learnku.com/docs/laravel/8.x" target="_blank">laravel-8</a>开发的一个博客系统</p>
 
 ## 功能特性
-- [x] 基于 `tailwindcss` 设计的响应式页面，非常轻巧，简介
+- [x] 基于 `tailwindcss` 设计的响应式页面，非常轻巧，简洁
 - [x] 基于 `laravel-livewire` 的组件化布局
 - [x] 用户注册登陆
 - [x] 个人信息完善
