@@ -16,7 +16,7 @@ class AuthController extends Controller
      */
     public function redirectToProvider(string $driver, Request $request): RedirectResponse
     {
-        session()->flash('referer_url', $request->server('HTTP_REFERER'));
+//        session()->flash('referer_url', $request->server('HTTP_REFERER'));
 
         return Socialite::driver($driver)->redirect();
     }
@@ -28,7 +28,7 @@ class AuthController extends Controller
     {
         $oauthService->callback($driver);
 
-        return redirect(session('referer_url', route('home.index')));
+        return redirect(session()->pull('url.intended') ?? route('home.index'));
     }
 
     /**
