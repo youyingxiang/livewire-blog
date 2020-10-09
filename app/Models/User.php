@@ -72,7 +72,7 @@ class User extends Authenticatable
                 return Storage::url($this->profile_photo_path);
             }
         } else {
-            return "https://ui-avatars.com/api/?name=" . $this->name . "color=7F9CF5&background=EBF4FF";
+            return 'https://ui-avatars.com/api/?name='.$this->name.'color=7F9CF5&background=EBF4FF';
         }
     }
 
@@ -80,5 +80,4 @@ class User extends Authenticatable
     {
         SendResetPasswordEmailJob::dispatch($this, $token)->onQueue(config('queue.queue_name.high'));
     }
-
 }

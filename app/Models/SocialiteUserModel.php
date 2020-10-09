@@ -3,12 +3,11 @@
 namespace App\Models;
 
 use Dcat\Admin\Traits\HasDateTimeFormatter;
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- * App\Models\SocialiteUserModel
+ * App\Models\SocialiteUserModel.
  *
  * @property int $id
  * @property int $user_id
@@ -35,7 +34,7 @@ class SocialiteUserModel extends Model
     const GITHUB = 0;
 
     const DRIVER = [
-        self::GITHUB => 'github'
+        self::GITHUB => 'github',
     ];
 
     protected $table = 'socialite_users';
@@ -51,7 +50,7 @@ class SocialiteUserModel extends Model
     {
         $finder = $this->where([
             'driver'  => $driver,
-            'open_id' => $openid
+            'open_id' => $openid,
         ])->first();
 
         return $finder ? $finder->user : null;
@@ -62,7 +61,7 @@ class SocialiteUserModel extends Model
      */
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class,);
+        return $this->belongsTo(User::class, );
     }
 
     /**
@@ -76,7 +75,7 @@ class SocialiteUserModel extends Model
         return $this->create([
             'user_id' => $userId,
             'driver'  => $driver,
-            'open_id' => $id
+            'open_id' => $id,
         ]);
     }
 }

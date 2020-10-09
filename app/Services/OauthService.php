@@ -16,12 +16,12 @@ class OauthService
 
         $finder = SocialiteUserModel::newModelInstance()->getUser(config('socialite.github.flag', 0), $user->id);
 
-        if (!$finder) {
-            $finder = DB::transaction(function () use ($finder, $driver, $user) {
-                $socialiteUser          = SocialiteUserModel::newModelInstance();
-                $socialiteUser->driver  = config('socialite.github.flag', 0);
+        if (! $finder) {
+            $finder = DB::transaction(function () use ($finder , $user) {
+                $socialiteUser = SocialiteUserModel::newModelInstance();
+                $socialiteUser->driver = config('socialite.github.flag', 0);
                 $socialiteUser->open_id = $user->id;
-                $finder                 = User::firstOrCreate(
+                $finder = User::firstOrCreate(
                     ['email' => $user->email],
                     [
                         'name'               => $user->username,
@@ -30,11 +30,10 @@ class OauthService
                 );
                 $socialiteUser->user_id = $finder->id;
                 $socialiteUser->save();
+
                 return $finder;
             });
-
         }
         Auth::login($finder);
-
     }
 }

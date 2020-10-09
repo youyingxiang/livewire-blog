@@ -3,12 +3,12 @@
 namespace App\Jobs;
 
 use App\Models\User;
+use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
 
 class SendResetPasswordEmailJob implements ShouldQueue
 {
@@ -29,7 +29,7 @@ class SendResetPasswordEmailJob implements ShouldQueue
      */
     public function __construct(User $user, string $token)
     {
-        $this->user  = $user;
+        $this->user = $user;
         $this->token = $token;
     }
 

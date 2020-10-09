@@ -38,7 +38,7 @@ class ShowComment extends Component
     }
 
     /**
-     * $params
+     * $params.
      */
     public function getCommens(int $postId): void
     {
@@ -47,8 +47,6 @@ class ShowComment extends Component
         $this->comments_count = $post->comments->count() ?? 0;
     }
 
-
-
     /**
      * @return View
      */
@@ -56,6 +54,4 @@ class ShowComment extends Component
     {
         return view('livewire.show-comment');
     }
-
-
 }

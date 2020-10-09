@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: youxingxiang
  * Date: 2020/10/4
- * Time: 3:22 PM
+ * Time: 3:22 PM.
  */
 
 namespace App\Traits;
@@ -15,6 +15,6 @@ trait Markdown
 {
     public function toHtml(string $content): string
     {
-        return str_replace("<pre><code>", '<pre><code class=" language-php">', Security::clean(Parsedown::instance()->parse($content)));
+        return str_replace('<pre><code>', '<pre><code class=" language-php">', Security::clean(Parsedown::instance()->parse($content)));
     }
 }

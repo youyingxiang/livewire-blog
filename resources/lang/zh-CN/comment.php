@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 return [
     'labels' => [
         'Comment' => '评论',

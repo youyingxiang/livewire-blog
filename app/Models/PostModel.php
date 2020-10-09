@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Extensions\Parsedown;
 use App\Traits\Markdown;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -91,7 +90,6 @@ class PostModel extends BaseModel
         return route('home.detail', ['id' => $this->id]);
     }
 
-
     /**
      * @return BelongsTo
      */
@@ -105,7 +103,7 @@ class PostModel extends BaseModel
      */
     public function comments(): HasMany
     {
-        return $this->hasMany(CommentModel::class,'post_id');
+        return $this->hasMany(CommentModel::class, 'post_id');
     }
 
     /**
@@ -121,6 +119,6 @@ class PostModel extends BaseModel
      */
     public function getHotImageUrlAttribute(): string
     {
-        return url()->isValidUrl($this->hot_image) ? $this->hot_image :  Storage::disk(config('admin.upload.disk'))->url($this->hot_image);
+        return url()->isValidUrl($this->hot_image) ? $this->hot_image : Storage::disk(config('admin.upload.disk'))->url($this->hot_image);
     }
 }

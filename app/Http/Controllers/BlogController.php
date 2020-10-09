@@ -27,14 +27,12 @@ class BlogController extends Controller
         $prev = $post->where(function (Builder $builder) use ($id, $post) {
             $builder->where('category_id', $post->category_id);
             $builder->where('id', '>', $id);
-
-
         })->orderBy('id', 'asc')->first(['id', 'title']);
         $next = $post->where(function (Builder $builder) use ($id, $post) {
             $builder->where('category_id', $post->category_id);
             $builder->where('id', '<', $id);
-
         })->orderBy('id', 'desc')->first(['id', 'title']);
+
         return view('blog.detail', compact('post', 'prev', 'next'));
     }
 

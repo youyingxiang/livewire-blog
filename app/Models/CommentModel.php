@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Notifications\RoutesNotifications;
 
 /**
- * App\Models\CommentModel
+ * App\Models\CommentModel.
  *
  * @property int $id
  * @property int $post_id 文章id
@@ -46,7 +46,6 @@ class CommentModel extends BaseModel
     protected $appends = ['content_str'];
 
     protected $with = ['user', 'replys'];
-
 
     /**
      * @return BelongsTo

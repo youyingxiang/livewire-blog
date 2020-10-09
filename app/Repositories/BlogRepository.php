@@ -19,9 +19,9 @@ class BlogRepository
      */
     public static function getPostById(int $id): PostModel
     {
-        return PostModel::with(['comments' => function(HasMany $hasMany){
-            $hasMany->where('parent_id',0);
-            $hasMany->orderBy('id','desc');
+        return PostModel::with(['comments' => function (HasMany $hasMany) {
+            $hasMany->where('parent_id', 0);
+            $hasMany->orderBy('id', 'desc');
         }])->findOrFail($id);
     }
 
@@ -72,7 +72,7 @@ class BlogRepository
      * @param int $parent_id
      * @return Collection
      */
-    public static function getCommensByPostId(int $post_id,int $parent_id): Collection
+    public static function getCommensByPostId(int $post_id, int $parent_id): Collection
     {
         return CommentModel::where([
             'post_id'   => $post_id,

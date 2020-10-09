@@ -38,7 +38,6 @@ class AddComment extends Component
      */
     public $target_id;
 
-
     /**
      * @var array
      */
@@ -54,24 +53,24 @@ class AddComment extends Component
 
     public function mount(int $postId, CommentModel $comment, int $time = 0): void
     {
-        $this->post_id                  = $postId;
-        $this->parent_id                = empty($comment->id) ? 0 : ($comment->parent_id ? $comment->parent_id : $comment->id);
-        $this->target_id                = empty($comment->id) ? 0 : $comment->id;
-        $this->content                  = ($time > 0 && !empty($comment->user)) ? "@" . $comment->user->name . "：" : '';
-        $this->comment_composing_box_id = 'comment-composing-box-' . Str::random(10);
-        $this->preview_box_id           = 'preview-box' . Str::random(10);
+        $this->post_id = $postId;
+        $this->parent_id = empty($comment->id) ? 0 : ($comment->parent_id ? $comment->parent_id : $comment->id);
+        $this->target_id = empty($comment->id) ? 0 : $comment->id;
+        $this->content = ($time > 0 && ! empty($comment->user)) ? '@'.$comment->user->name.'：' : '';
+        $this->comment_composing_box_id = 'comment-composing-box-'.Str::random(10);
+        $this->preview_box_id = 'preview-box'.Str::random(10);
     }
 
     public function submit(): void
     {
         if ($this->check()) {
             $validatedData = $this->validate();
-            $data          = [
+            $data = [
                 'content'   => $validatedData['content'],
                 'user_id'   => Auth::user()->id,
                 'parent_id' => $this->parent_id,
                 'post_id'   => $this->post_id,
-                'target_id' => $this->target_id
+                'target_id' => $this->target_id,
             ];
 
             CommentModel::create($data);
@@ -86,7 +85,7 @@ class AddComment extends Component
 
     public function userCommentLimit(MessageBag &$messageBag): void
     {
-        $time           = Cache::get(user_comment_limit_key()) ?? 0;
+        $time = Cache::get(user_comment_limit_key()) ?? 0;
         $limit_day_time = config('cache.user_comment_limit.day_time', 10);
 
         if ($limit_day_time < $time) {
@@ -107,14 +106,14 @@ class AddComment extends Component
     /**
      * @return bool
      */
-    public function check(): Bool
+    public function check(): bool
     {
         $messageBag = $this->getErrorBag();
         $this->userCommentLimit($messageBag);
         $this->mustLogin($messageBag);
+
         return $messageBag->count() === 0;
     }
-
 
     /**
      * @return View

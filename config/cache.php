@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Str;
-
 return [
 
     /*
@@ -103,6 +101,6 @@ return [
 
     'user_comment_limit' => [
         'day_time'  => 10,
-        'cache_key' => 'comment_time:'
+        'cache_key' => 'comment_time:',
     ],
 ];

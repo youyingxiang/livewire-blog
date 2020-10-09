@@ -40,7 +40,6 @@ set('writable_use_sudo', false);
 set('keep_releases', 5);
 set('default_stage', 'dev');
 
-
 host('dev')
     ->stage('dev')
     ->hostname('47.106.87.22')

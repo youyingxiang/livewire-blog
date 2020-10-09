@@ -18,7 +18,7 @@ class ChangeUsersTable extends Migration
             $table->string('email')->default('')->change();
             $table->string('password')->default('')->change();
             $table->dropColumn('current_team_id');
-            $table->string('profile_photo_path',500)->default('')->change();
+            $table->string('profile_photo_path', 500)->default('')->change();
         });
     }
 

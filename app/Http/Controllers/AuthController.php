@@ -6,8 +6,8 @@ use App\Services\OauthService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Socialite;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class AuthController extends Controller
 {
@@ -17,6 +17,7 @@ class AuthController extends Controller
     public function redirectToProvider(string $driver, Request $request): RedirectResponse
     {
         session()->flash('referer_url', $request->server('HTTP_REFERER'));
+
         return Socialite::driver($driver)->redirect();
     }
 
@@ -26,6 +27,7 @@ class AuthController extends Controller
     public function handleProviderCallback(string $driver, OauthService $oauthService): RedirectResponse
     {
         $oauthService->callback($driver);
+
         return redirect(session('referer_url', route('home.index')));
     }
 
@@ -35,6 +37,7 @@ class AuthController extends Controller
     public function logout(): \Illuminate\Http\RedirectResponse
     {
         Auth::logout();
+
         return redirect()->back();
     }
 }
