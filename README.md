@@ -12,9 +12,9 @@
 
 ## 环境
  - PHP >= 7.2.0
- - Laravel 8.*
+ - Laravel 8.* 
  
- ## 安装
+## 安装
  
 - ```git clone https://github.com/youyingxiang/livewire-blog.git```
 - 在 `.env` 文件配置好数据库
@@ -25,6 +25,13 @@
 
 ## 线上地址
 [我的博客](https://blog.you-tang.com/) 
+
+## 界面效果
+![](https://cdn.learnku.com/uploads/images/202010/09/43464/V7XX6ccZqp.png!large)
+
+![](https://cdn.learnku.com/uploads/images/202010/09/43464/DyUDznuBWF.png!large)
+
+![](https://cdn.learnku.com/uploads/images/202010/09/43464/OglgUzw9Hy.png!large)
 
 `Livewire-Blog` 基于以下组件和拓展开发:
 
