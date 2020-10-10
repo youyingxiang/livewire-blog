@@ -29,7 +29,7 @@ Route::group([], function (Router $router) {
     $router->get('/detail/{id}', [\App\Http\Controllers\BlogController::class, 'detail'])->name('home.detail');
     $router->get('/oauth/{driver}', [\App\Http\Controllers\AuthController::class, 'redirectToProvider'])->name('oauth');
     $router->get('/oauth/{driver}/callback', [\App\Http\Controllers\AuthController::class, 'handleProviderCallback'])->name('oauth.callback');
-    $router->get('/to-login',[\App\Http\Controllers\BlogController::class,'tologin'])->name('home.tologin');
+    $router->get('/to-login', [\App\Http\Controllers\BlogController::class, 'tologin'])->name('home.tologin');
 //    $router->get('logout',[App\Http\Controllers\AuthController::class,'logout'])->name('oauth.logout');
 
     $router->get('/test', [\App\Http\Controllers\BlogController::class, 'test']);

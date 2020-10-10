@@ -8,7 +8,6 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
-use Symfony\Component\HttpFoundation\Response;
 
 class PushBaiduCommend extends Command
 {
@@ -58,20 +57,19 @@ class PushBaiduCommend extends Command
         return PostModel::pluck('id')->map(function ($id) {
             return route('home.detail', $id);
         })->push(route('home.index'));
-
     }
 
     public function push(string $url)
     {
-        $urls   = $this->urls();
+        $urls = $this->urls();
         $client = new Client();
 
-        $result = $client->post($url,[
+        $result = $client->post($url, [
             'json' => $urls,
             'allow_redirects' => true,
             'headers' => [
                 'content-type' => 'text/plain',
-            ]
+            ],
         ]);
         Log::channel('pushinfo')->info($result->getBody());
     }

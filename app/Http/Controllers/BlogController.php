@@ -63,6 +63,7 @@ class BlogController extends Controller
     public function toLogin(Request $request): RedirectResponse
     {
         session()->put('url.intended', $request->server('HTTP_REFERER'));
+
         return redirect(route('login'));
     }
 
