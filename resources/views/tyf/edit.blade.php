@@ -36,7 +36,7 @@
                 <div class="weui-cells weui-cells_form">
                     <div class="weui-cell">
                         <div class="weui-cell__bd">
-                            <input class="weui-input" name="created_at" type="date" pattern='yyyy-MM-dd' id="created_at"
+                            <input class="weui-input" name="created_at" id="created_at"
                                    placeholder="请选择时间" readonly value="{{ $recipe->created_at->format('Y-m-d') }}"/>
                         </div>
                     </div>
