@@ -98,7 +98,7 @@
 
         <div class="button-sp-area">
             <input type="submit" class="weui-btn weui-btn_primary">
-            <a href="{{ route('tyfs.index') }}" style="margin-bottom: 10px" class="weui-btn weui-btn_disabled weui-btn_default">返回列表</a>
+            <a href="{{ route('tyfs.index') }}" style="margin-bottom: 24px" class="weui-btn weui-btn_disabled weui-btn_default">返回列表</a>
         </div>
     </form>
 
