@@ -23,32 +23,37 @@
                 </div>
             </div>
         @endif
+        @if ($recipes->count() > 0)
+            @foreach($recipes as $recipe)
+                <div class="weui-panel weui-panel_access">
+                    <a href="{{route('tyfs.edit',$recipe->id)}}">
+                        <div class="weui-panel__hd weui-cell weui-cell_active weui-cell_access weui-cell_link">
+                            <div class="weui-cell__bd">{{ $recipe->created_at->format('Y-m-d') }}</div>
+                            <span class="weui-cell__ft"></span>
+                        </div>
+                    </a>
+                    <div class="weui-panel__bd">
+                        <div class="weui-media-box weui-media-box_text">
+                            <h4 class="weui-media-box__title">早餐</h4>
+                            <p class="weui-media-box__desc">{{ $recipe->breakfast }}</p>
+                        </div>
+                        <div class="weui-media-box weui-media-box_text">
+                            <h4 class="weui-media-box__title">午餐</h4>
+                            <p class="weui-media-box__desc">{{ $recipe->lunch }}</p>
+                        </div>
+                        <div class="weui-media-box weui-media-box_text">
+                            <h4 class="weui-media-box__title">晚餐</h4>
+                            <p class="weui-media-box__desc">{{ $recipe->dinner }}</p>
+                        </div>
+                    </div>
 
-        @foreach($recipes as $recipe)
-            <div class="weui-panel weui-panel_access">
-                <a href="{{route('tyfs.edit',$recipe->id)}}">
-                    <div class="weui-panel__hd weui-cell weui-cell_active weui-cell_access weui-cell_link">
-                        <div class="weui-cell__bd">{{ $recipe->created_at->format('Y-m-d') }}</div>
-                        <span class="weui-cell__ft"></span>
-                    </div>
-                </a>
-                <div class="weui-panel__bd">
-                    <div class="weui-media-box weui-media-box_text">
-                        <h4 class="weui-media-box__title">早餐</h4>
-                        <p class="weui-media-box__desc">{{ $recipe->breakfast }}</p>
-                    </div>
-                    <div class="weui-media-box weui-media-box_text">
-                        <h4 class="weui-media-box__title">午餐</h4>
-                        <p class="weui-media-box__desc">{{ $recipe->lunch }}</p>
-                    </div>
-                    <div class="weui-media-box weui-media-box_text">
-                        <h4 class="weui-media-box__title">晚餐</h4>
-                        <p class="weui-media-box__desc">{{ $recipe->dinner }}</p>
-                    </div>
                 </div>
-
+            @endforeach
+        @else
+            <div class="weui-loadmore weui-loadmore_line">
+                <span class="weui-loadmore__tips">暂无数据</span>
             </div>
-        @endforeach
+        @endif
 
 
 
