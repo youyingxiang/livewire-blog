@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <title>食谱计</title>
+    <title>食谱记</title>
     <!-- 引入 WeUI CDN 链接 -->
     <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/2.3.0/weui.min.css"/>
 
@@ -98,7 +98,7 @@
 
         <div class="button-sp-area">
             <input type="submit" class="weui-btn weui-btn_primary">
-            <a href="{{ route('tyfs.index') }}" class="weui-btn weui-btn_disabled weui-btn_default">返回列表</a>
+            <a href="{{ route('tyfs.index') }}" style="margin-bottom: 10px" class="weui-btn weui-btn_disabled weui-btn_default">返回列表</a>
         </div>
     </form>
 
