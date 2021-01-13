@@ -17,7 +17,7 @@ class OauthService
         $finder = SocialiteUserModel::newModelInstance()->getUser(config('socialite.github.flag', 0), $user->id);
 
         if (! $finder) {
-            $finder = DB::transaction(function () use ($finder , $user) {
+            $finder = DB::transaction(function () use ($finder, $user) {
                 $socialiteUser = SocialiteUserModel::newModelInstance();
                 $socialiteUser->driver = config('socialite.github.flag', 0);
                 $socialiteUser->open_id = $user->id;
