@@ -1,8 +1,8 @@
 id: 17160
 name: livewire-blog
 environments:
-    database: blog
     production:
+        database: vapor-blog
         memory: 1024
         cli-memory: 512
         runtime: php-7.4
@@ -13,4 +13,4 @@ environments:
             - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
             - 'php artisan event:cache'
         deploy:
-          - 'php artisan migrate --force'
+            - 'php artisan migrate --force'
