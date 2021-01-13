@@ -17,3 +17,6 @@ _ide_helper.php
 .idea/*.xml
 .idea/
 .idea/workspace.xml
+.vapor/
+.env.production
+.env.staging

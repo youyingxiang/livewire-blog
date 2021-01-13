@@ -1,0 +1,16 @@
+id: 17160
+name: livewire-blog
+environments:
+    database: blog
+    production:
+        memory: 1024
+        cli-memory: 512
+        runtime: php-7.4
+        concurrency: 50
+        warm: 10
+        timeout: 10
+        build:
+            - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
+            - 'php artisan event:cache'
+        deploy:
+          - 'php artisan migrate --force'
