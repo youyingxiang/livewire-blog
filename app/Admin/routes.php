@@ -12,6 +12,7 @@ Route::group([
     'middleware'    => config('admin.route.middleware'),
 ], function (Router $router) {
     $router->get('/', 'HomeController@index');
+    $router->post('/posts/send-mail/{id}','PostController@sendMail')->name('posts.send-mail');
     $router->resource('posts', 'PostController');
     $router->resource('tags', 'TagController');
     $router->resource('categorys', 'CategoryController');

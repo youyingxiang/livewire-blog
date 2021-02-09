@@ -2,13 +2,18 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\Grid\SendEmail;
 use App\Admin\Repositories\Post;
+use App\Mail\PostPushMail;
 use App\Models\CategoryModel;
 use App\Models\PostModel;
 use App\Models\TagModel;
+use App\Models\User;
 use Dcat\Admin\Controllers\AdminController;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Response;
 
 class PostController extends AdminController
 {
@@ -33,6 +38,7 @@ class PostController extends AdminController
             $grid->showQuickEditButton(false);
             $grid->actions(function (\Dcat\Admin\Grid\Displayers\Actions $actions) {
                 $actions->disableEdit(false);
+                $actions->append(new SendEmail());
             });
         });
     }
@@ -62,5 +68,26 @@ class PostController extends AdminController
                 $form->image('hot_image')->autoUpload()->uniqueName()->default(asset('images/default-post.png'))->saveAsString();
             })->default(0)->required();
         });
+    }
+
+    public function sendMail(int $id)
+    {
+        try {
+            $post = PostModel::findOrFail($id);
+            $user = User::query()->get();
+            $user->each(function (User $user) use ($post) {
+                Mail::to($user)->send(new PostPushMail($post));
+            });
+            return Response::json([
+                'status' => true,
+                'message' => '发送成功！'
+            ]);
+        } catch (\Exception $exception) {
+            return Response::json([
+                'status' => false,
+                'message' => $exception->getMessage(),
+            ]);
+        }
+
     }
 }
