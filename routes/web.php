@@ -33,7 +33,11 @@ Route::group([], function (Router $router) {
 //    $router->get('logout',[App\Http\Controllers\AuthController::class,'logout'])->name('oauth.logout');
 
     $router->get('/test', [\App\Http\Controllers\BlogController::class, 'test']);
+    $router->middleware(['auth:sanctum', 'verified'])->group(function (Router $router) {
+        $router->resource('tyfs', \App\Http\Controllers\TyfController::class);
+    });
 });
+
 //Route::get('home',function (){
 //    return view('welcome');
 //});

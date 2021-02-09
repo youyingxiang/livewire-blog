@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+
+<url>
+  <loc>https://blog.you-tang.com/</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/category/php</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/category/python</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/category/other</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/register</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/login</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/5</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/AWS-5</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/8</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/DcatAdmin-4</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/Laravel-3</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/Erp-2</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/15</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/Jetstream-18</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/Livewire-6</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/alpinejs-19</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/category</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/7</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/6</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/4</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/3</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/Swoole-1</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/2</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/1</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/%E9%AA%8C%E8%AF%81%E7%A0%81-11</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/12</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/Flask-9</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/11</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/9</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/%E5%B0%8F%E7%A8%8B%E5%BA%8F-15</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/%E6%9C%8D%E5%8A%A1%E7%9B%B4%E8%BE%BE-13</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/14</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/%E5%8A%A8%E6%80%81%E5%8F%98%E9%87%8F-12</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/13</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/https-10</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/tag/nginx-8</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/detail/10</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://blog.you-tang.com/forgot-password</loc>
+  <lastmod>2020-11-02T07:11:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

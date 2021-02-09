@@ -26,7 +26,9 @@ class AuthController extends Controller
      */
     public function handleProviderCallback(string $driver, OauthService $oauthService): RedirectResponse
     {
-        $oauthService->callback($driver);
+        if (!request()->input('error')) {
+            $oauthService->callback($driver);
+        }
 
         return redirect(session()->pull('url.intended') ?? route('home.index'));
     }
