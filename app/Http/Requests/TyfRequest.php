@@ -28,7 +28,7 @@ class TyfRequest extends FormRequest
             'lunch' => 'string|nullable',
             'dinner' => 'string|nullable',
             'weight' => 'numeric|nullable',
-            'created_at' => 'date|nullable'
+            'created_at' => 'date|nullable',
             //
         ];
     }
@@ -36,7 +36,7 @@ class TyfRequest extends FormRequest
     public function messages()
     {
         return [
-            'weight.numeric' => "体重必须为一个数字！",
+            'weight.numeric' => '体重必须为一个数字！',
         ];
     }
 

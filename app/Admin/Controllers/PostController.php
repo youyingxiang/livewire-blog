@@ -78,9 +78,10 @@ class PostController extends AdminController
             $user->each(function (User $user) use ($post) {
                 Mail::to($user)->send(new PostPushMail($post));
             });
+
             return Response::json([
                 'status' => true,
-                'message' => '发送成功！'
+                'message' => '发送成功！',
             ]);
         } catch (\Exception $exception) {
             return Response::json([
@@ -88,6 +89,5 @@ class PostController extends AdminController
                 'message' => $exception->getMessage(),
             ]);
         }
-
     }
 }

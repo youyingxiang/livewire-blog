@@ -26,7 +26,7 @@ class AuthController extends Controller
      */
     public function handleProviderCallback(string $driver, OauthService $oauthService): RedirectResponse
     {
-        if (!request()->input('error')) {
+        if (! request()->input('error')) {
             $oauthService->callback($driver);
         }
 
