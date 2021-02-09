@@ -1,4 +1,4 @@
-@extends('blog.layout')
+@extends('blog.layout',['title'=> $tag . '-' . blog_default_title(),'desc' => $tag])
 
 @section('content')
     <div class="block md:flex break-all">
