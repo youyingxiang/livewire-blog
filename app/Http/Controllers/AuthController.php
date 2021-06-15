@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Services\OauthService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use Socialite;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
